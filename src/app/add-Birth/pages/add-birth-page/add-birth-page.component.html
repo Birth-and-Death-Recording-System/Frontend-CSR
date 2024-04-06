@@ -42,7 +42,7 @@
                   type="date"
                   formControlName="date"
                   placeholder="Date of Birth"
-                  class="input"
+                  class="input"         
                   required
                 />
                 <select formControlName="gender" class="choice" required>
@@ -116,13 +116,16 @@
                   class="input"
                   required
                 />
-                <input
+                <!-- <input
                   type="text"
                   formControlName="Father_Nationality"
                   placeholder="Nationality"
                   class="input"
                   required
-                />
+                />   -->
+                <select formControlName="Father_Nationality" class="input">
+                  <option *ngFor="let country of countries">{{ country.name.common }}</option>
+                </select>
                 <select
                   formControlName="Father_ID_type"
                   class="choice"
@@ -178,13 +181,17 @@
                   class="input"
                   required
                 />
-                <input
+                <!-- <input
                   type="text"
                   formControlName="Mother_Nationality"
                   placeholder="Nationality"
                   class="input"
                   required
-                />
+                /> -->
+
+                <select formControlName="Mother_Nationality" class="input">
+                  <option *ngFor="let country of countries">{{ country.name.common }}</option>
+                </select>
                 <select
                   formControlName="Mother_ID_type"
                   class="choice"
