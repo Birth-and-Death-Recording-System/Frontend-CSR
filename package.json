@@ -25,8 +25,8 @@
     "@fortawesome/angular-fontawesome": "^0.14.1",
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2"
-
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@canvasjs/angular-charts": "^1.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.2.3",
