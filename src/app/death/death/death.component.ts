@@ -1,53 +1,53 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faRemove, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from '../../search-bar/search-bar/search-bar.component';
-import { AddBirthPageComponent } from '../../add-Birth/pages/add-birth-page/add-birth-page.component';
+import { AddDeathComponent } from '../../add-death/add-death/add-death.component';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
-  selector: 'app-birth',
+  selector: 'app-death',
   standalone: true,
   imports: [
     SearchBarComponent,
-    AddBirthPageComponent,
-    FontAwesomeModule,
-    RouterLink,
-    RouterOutlet,
-    CommonModule,
+     AddDeathComponent, 
+     FontAwesomeModule, 
+     RouterLink,
+     RouterOutlet,
+     CommonModule
   ],
-  templateUrl: './birth.component.html',
-  styleUrl: './birth.component.css'
+  templateUrl: './death.component.html',
+  styleUrl: './death.component.css'
 })
-export class BirthComponent implements OnInit {
+export class DeathComponent implements OnInit{
+  faRemove = faRemove;
   faEdit = faEdit;
   faTrash = faTrash;
 
-  births: any[] = []; // Property to store the birth data
+  deaths: any[] = []; // Property to store the birth data
   error: string = ''; // Property to store error messages
 
   constructor(private authService: AuthService) { } // Inject BirthService
 
   ngOnInit(): void {
-    this.loadBirths(); // Call loadBirths method when component initializes
+    this.loadDeaths(); // Call loadBirths method when component initializes
   }
 
-  loadBirths() {
-    this.authService.getAllBirths().subscribe(
+  loadDeaths() {
+    this.authService.getAllDeaths().subscribe(
       (data: any) => {
         // Handle successful response here
         console.log(data); // Log the response data to the console
-        this.births = data; // Store the birth data
+        this.deaths = data; // Store the birth data
         this.error = ''; // Clear any previous error message
       },
       (error: any) => {
         // Handle error here
         console.error(error); // Log the error to the console
         this.error = 'Failed to load birth data'; // Set error message
-        this.births = []; // Clear birth data
+        this.deaths = []; // Clear birth data
       }
     );
   }

@@ -4,13 +4,11 @@
         <div class="search-bar">
           <app-search-bar />
         </div>
-        <div class="add-birth">
-          <a routerLink="add-birth" class="primary" type="button">
-            Add Birth
-          </a>
+        <div class="add-death">
+          <a routerLink="add-death" class="primary" type="button">Add Death</a>
         </div>
       </div>
-      <div class="births">
+      <div class="death">
         <table class="center">
           <colgroup>
             <col style="width: 110px;" />
@@ -23,22 +21,20 @@
             <col style="width: 100px;" />
           </colgroup>
           <tr>
-            <th>CIN</th>
-            <th>Name</th>
+            <th>Surname</th>
+            <th>First Name</th>
             <th>Gender</th>
-            <th>Date of Birth</th>
-            <th>Place of Birth</th>
-            <th>City</th>
+            <th>Death Date</th>
+            <th>Burial Status</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
-          <tr class="fist" *ngFor="let birth of births">
-            <td>{{ birth.CIN }}</td>
-            <td>{{ birth.First_Name }}</td>
-            <td>{{ birth.Gender === 'M' ? 'Male' : 'Female' }}</td>
-            <td>{{ birth.date }}</td>
-            <td>{{ birth.Place_of_Birth }}</td>
-            <td>{{ birth.City }}</td>
+          <tr class="fist" *ngFor="let death of deaths">
+            <td>{{ death.surname }}</td>
+            <td>{{ death.first_name }}</td>
+            <td>{{ death.Gender === 'M' ? 'Male' : 'Female' }}</td>
+            <td>{{ death.date }}</td>
+            <td>{{ death.Burial_Status == 'B' ? 'Buried' :'Not Buried' }}</td>
             <td class="btn-center">
               <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
             </td>
@@ -48,10 +44,10 @@
               </button>
             </td>
           </tr>
-          
+          <tr class="second">
         </table>
         <div>
-          <router-outlet />
+          <router-outlet/>
         </div>
       </div>
     </div>

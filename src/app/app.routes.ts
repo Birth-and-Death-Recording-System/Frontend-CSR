@@ -5,6 +5,8 @@ import { DashboardComponent } from './Pages/Dashboard/dashboard/dashboard/dashbo
 import { LayoutComponent } from './layout/layout/layout.component';
 import { AddBirthPageComponent } from './add-Birth/pages/add-birth-page/add-birth-page.component';
 import { BirthComponent } from './birth/birth/birth.component';
+import { DeathComponent } from './death/death/death.component';
+import { AddDeathComponent } from './add-death/add-death/add-death.component';
 
 export const routes: Routes = [
   {
@@ -35,6 +37,18 @@ export const routes: Routes = [
           },
         ],
         title: 'Birth',
+      },
+      {
+        path: 'death',
+        component: DeathComponent,
+        children: [
+          {
+            path: 'add-death',
+            component: AddDeathComponent,
+            title: 'Add Death',
+          },
+        ],
+        title: 'Death',
       },
     ],
     title: 'Home',

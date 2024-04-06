@@ -4,14 +4,13 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
-import { MatSelectCountryModule } from "@angular-material-extensions/select-country";
 import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-add-birth',
   standalone: true,
-  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule, MatSelectCountryModule, CommonModule],
+  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule, CommonModule],
   templateUrl: './add-birth-page.component.html',
   styleUrl: './add-birth-page.component.css'
 })
@@ -73,17 +72,12 @@ export class AddBirthPageComponent implements OnInit {
     
   }
 
-  // validateDate(control: FormControl): { [key: string]: any } | null {
-  //   const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(control.value);
-  //   return isValidDate ? null : { 'invalidDate': true };
-  // }
 
  
 
 
   onSubmit(): void {
     const birthData = this.birthForm.value;
-    console.log(birthData,'jjdj')
     this.authService.submitBirthData(birthData).subscribe({
       next: (response: any) => {
         console.log(response);

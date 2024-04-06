@@ -116,13 +116,6 @@
                   class="input"
                   required
                 />
-                <!-- <input
-                  type="text"
-                  formControlName="Father_Nationality"
-                  placeholder="Nationality"
-                  class="input"
-                  required
-                />   -->
                 <select formControlName="Father_Nationality" class="input">
                   <option *ngFor="let country of countries">{{ country.name.common }}</option>
                 </select>
