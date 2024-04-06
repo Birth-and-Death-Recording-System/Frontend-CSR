@@ -10,7 +10,7 @@
     box-shadow: 0 0 5px .2px rgb(212, 212, 212);
     z-index: 1;
   }
-  
+
   .container {
     display: flex;
     height: 90vh;
@@ -19,7 +19,7 @@
     overflow: hidden;
     flex-direction: column;
   }
-  
+
   .side-nav {
     display: flex;
     padding-top: 150px;
@@ -30,14 +30,14 @@
     list-style: circle;
     justify-content: space-between;
   }
-  
+
   .nav-links {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: inherit;
   }
-  
+
   .nav-links a {
     margin: 5px 10px;
     padding: 14px;
@@ -49,30 +49,29 @@
     transition: .2s ease-in-out;
     background-color: #338255;
   }
-  
+
   .side-nav .nav-links a:hover {
     cursor: pointer;
     background-color: #49a16f;
   }
-  
+
   .side-nav {
     display: flex;
     width: inherit;
   }
-  
+
   .log-out .log-out-btn {
     color: #ffffff;
     font-size: 14px;
     border: none;
-    padding: 14px 60px;
-    width: inherit;
+    padding: 16px 20px;
+    width: 70%;
     border-radius: 5px;
     background-color: #338255;
   }
-  
+
   .log-out .log-out-btn:hover {
     cursor: pointer;
     background-color: #49a16f;
     transition: .5 ease-in-out;
   }
-  

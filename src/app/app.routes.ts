@@ -8,9 +8,9 @@ import { BirthComponent } from './birth/birth/birth.component';
 
 export const routes: Routes = [
   {
-      path: '',
-      component: LoginComponent,
-      title: 'Login',
+    path: '',
+    component: LoginComponent,
+    title: 'Login',
   },
   {
     path: '',
@@ -18,7 +18,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomeComponent,
+        component: DashboardComponent,
       },
       {
         path: 'dashboard',
@@ -36,9 +36,7 @@ export const routes: Routes = [
         ],
         title: 'Birth',
       },
-      
     ],
     title: 'Home',
-    
-  }
+  },
 ];
