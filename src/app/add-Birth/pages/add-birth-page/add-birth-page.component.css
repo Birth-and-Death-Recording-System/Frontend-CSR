@@ -72,7 +72,7 @@
     width: 58vw;
   }
   
-  .babyInfo input{
+  .babyInfo input, .input{
     height: 29px;
     width: 18%;
     color: rgb(114, 114, 114);
