@@ -3,14 +3,22 @@
       <div class="birth-death">
         <div class="bd">
           <div class="birth">
-            <p><fa-icon [icon]="faCakeCandles"></fa-icon></p>
-            <h3>Births</h3>
-            <p>{{ birthsCount }}</p>
+            <div>
+              <h3>Births</h3>
+              <!-- <p><fa-icon [icon]="faCakeCandles"></fa-icon></p> -->
+            </div>
+            <div>
+              <p>{{ birthsCount }}</p>
+            </div>
           </div>
           <div class="death">
-            <p><fa-icon [icon]="faBedPulse"></fa-icon></p>
-            <h3>Deaths</h3>
-            <p>{{ deathsCount }}</p>
+            <div>
+              <h3>Deaths</h3>
+              <p><fa-icon [icon]="faBedPulse"></fa-icon></p>
+            </div>
+            <div>
+              <p>{{ deathsCount }}</p>
+            </div>
           </div>
         </div>
         <div class="graph">

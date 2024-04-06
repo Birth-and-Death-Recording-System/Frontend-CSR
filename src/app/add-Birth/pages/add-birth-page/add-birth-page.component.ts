@@ -65,15 +65,15 @@ export class AddBirthPageComponent implements OnInit {
       Mother_DOB: ['', Validators.required],
       Mother_Phone_Number: ['', Validators.required],
 
-      
+
     });
 
     // Make request to API using token if needed
-    
+
   }
 
 
- 
+
 
 
   onSubmit(): void {
@@ -86,6 +86,5 @@ export class AddBirthPageComponent implements OnInit {
         console.log(error);
       }
     });
-   
   }
 }
