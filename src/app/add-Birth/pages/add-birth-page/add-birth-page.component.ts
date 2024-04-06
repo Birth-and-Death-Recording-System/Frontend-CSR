@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-add-birth',
   standalone: true,
-  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule],
+  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule, MatSelectCountryModule, CommonModule],
   templateUrl: './add-birth-page.component.html',
   styleUrl: './add-birth-page.component.css'
 })
