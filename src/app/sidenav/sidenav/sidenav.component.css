@@ -1,0 +1,78 @@
+.sideNav {
+    position: fixed;
+    font-family: "Manrope", sans-serif;
+    padding: auto;
+    text-align: center;
+    width: 16%;
+    height: 100vh;
+    background-color: white;
+    padding: 0;
+    box-shadow: 0 0 5px .2px rgb(212, 212, 212);
+    z-index: 1;
+  }
+  
+  .container {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    padding: auto;
+    overflow: hidden;
+    flex-direction: column;
+  }
+  
+  .side-nav {
+    display: flex;
+    padding-top: 150px;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    height: inherit;
+    list-style: circle;
+    justify-content: space-between;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: inherit;
+  }
+  
+  .nav-links a {
+    margin: 5px 10px;
+    padding: 14px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+    background-color: #338255;
+  }
+  
+  .side-nav .nav-links a:hover {
+    cursor: pointer;
+    background-color: #49a16f;
+  }
+  
+  .side-nav {
+    display: flex;
+    width: inherit;
+  }
+  
+  .log-out .log-out-btn {
+    color: #ffffff;
+    font-size: 14px;
+    border: none;
+    padding: 14px 60px;
+    width: inherit;
+    border-radius: 5px;
+    background-color: #338255;
+  }
+  
+  .log-out .log-out-btn:hover {
+    cursor: pointer;
+    background-color: #49a16f;
+    transition: .5 ease-in-out;
+  }
+  

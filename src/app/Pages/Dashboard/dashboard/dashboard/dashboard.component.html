@@ -1,0 +1,21 @@
+<div class="main-display">
+    <div class="container">
+      <div class="birth-death">
+        <div class="bd">
+          <div class="birth">
+            <p><fa-icon [icon]="faCakeCandles"></fa-icon></p>
+            <h3>Births</h3>
+            <p>{{ birthsCount }}</p>
+          </div>
+          <div class="death">
+            <p><fa-icon [icon]="faBedPulse"></fa-icon></p>
+            <h3>Deaths</h3>
+            <p>{{ deathsCount }}</p>
+          </div>
+        </div>
+        <div class="graph">
+          <app-chart></app-chart>
+        </div>
+      </div>
+    </div>
+  </div>

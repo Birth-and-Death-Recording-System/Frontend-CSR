@@ -1,0 +1,26 @@
+input[type="text"] {
+    border: solid .3px #338255;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 400px;
+  }
+  
+  .search .primary {
+    padding: 10px 20px;
+    color: #338255;
+    font-weight: 300;
+    background: #fefefe;
+    border-radius: 5px;
+    border: solid .3px #338255;
+    margin: 0 0 0 3px;
+  }
+  
+  .search .primary:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #49a16f;
+    transition: .5 ease-in-out;
+  }
+  

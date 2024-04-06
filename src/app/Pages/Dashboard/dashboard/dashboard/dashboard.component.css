@@ -1,0 +1,119 @@
+.main-display {
+    position: absolute;
+    top: 11%;
+    left: 18%;
+    width: 76%;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 80%;
+  }
+  
+  .birth-death {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bd {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+  }
+  
+  .birth {
+    margin: 0;
+    width: 49%;
+    height: 10.3vh;
+    display: flex;
+    color: #338255;
+    border-radius: 5px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: .5px #33825594 solid;
+    box-shadow: 0 0 5px #33825574;
+  }
+  
+  .birth h3 {
+    margin: 0;
+    font-size: 20px;
+    padding: 3px 0 3px 30px;
+  }
+  
+  .birth p {
+    margin: 0;
+    font-size: 16px;
+    padding: 3px 0 3px 30px;
+  }
+  
+  .death {
+    margin: 0;
+    width: 49%;
+    height: 10.3vh;
+    display: flex;
+    color: #338255;
+    border-radius: 5px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: .5px #33825594 solid;
+    box-shadow: 0 0 5px #33825574;
+  }
+  
+  .death h3 {
+    margin: 0;
+    font-size: 20px;
+    padding: 3px 0 3px 30px;
+  }
+  
+  .death p {
+    margin: 0;
+    font-size: 16px;
+    padding: 3px 0 3px 30px;
+  }
+  
+  .graph {
+    margin-top: 30px;
+    padding-top:50px;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 60vh;
+    width: 95.5%;
+    color: #338255;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    border-radius: 5px;
+    border: .5px #33825594 solid;
+    box-shadow: 0 0 5px #33825574;
+    overflow: hidden;
+  }
+  
+  .activity {
+    width: 15vw;
+    margin: 0 0 0 20px;
+    color: #338255;
+    background-color: white;
+    border-radius: 5px;
+    border: .8px #33825594 solid;
+    box-shadow: 0 0 5px #33825574;
+  }
+  
+  .activity h3{
+    margin: 0;
+    padding: 10px 0 0 20px;
+  }
+  
+  .activity p{
+    margin: 0;
+    padding: 6px 0 0 20px;
+  }
+  

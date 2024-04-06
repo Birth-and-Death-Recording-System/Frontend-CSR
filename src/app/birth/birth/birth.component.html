@@ -1,0 +1,76 @@
+<div class="main-display">
+    <div class="container">
+      <div class="add-search">
+        <div class="search-bar">
+          <app-search-bar />
+        </div>
+        <div class="add-birth">
+          <a routerLink="add-birth" class="primary" type="button">
+            Add Birth
+          </a>
+        </div>
+      </div>
+      <div class="births">
+        <table class="center">
+          <colgroup>
+            <col style="width: 110px;" />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+          </colgroup>
+          <tr>
+            <th>CIN</th>
+            <th>Name</th>
+            <th>Genader</th>
+            <th>Date of Birth</th>
+            <th>Place of Birth</th>
+            <th>City</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr class="fist">
+            <td>12345</td>
+            <td>Nana Powey</td>
+            <td>Male</td>
+            <td>7th December, 1645</td>
+            <td>KATH</td>
+            <td>Bunda Land</td>
+            <td class="btn-center">
+              <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
+            </td>
+            <td class="btn-center">
+              <button class="btn">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+            </td>
+          </tr>
+          <tr class="second">
+            <td>67890</td>
+            <td>Bunda Man</td>
+            <td>Male</td>
+            <td>30th November, 1876</td>
+            <td>Nungua</td>
+            <td>Bunda town</td>
+            <td class="btn-center">
+              <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
+            </td>
+            <td class="btn-center">
+              <button class="btn">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <!-- <router-outlet></router-outlet> -->
+          <app-add-birth />
+          <router-outlet />
+          <!-- <app-add-birth /> -->
+        </div>
+      </div>
+    </div>
+  </div>

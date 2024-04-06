@@ -9,7 +9,7 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
 const authService = inject(AuthService);
 const token = req.clone({
   setHeaders:{
-    Authorization: ` ${authService.getToken()}`
+    Authorization: `Token ${authService.getToken()}`
   }
 }
 );

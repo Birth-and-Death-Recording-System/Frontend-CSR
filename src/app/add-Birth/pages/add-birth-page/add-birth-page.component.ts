@@ -6,7 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-add-birth-page',
+  selector: 'app-add-birth',
   standalone: true,
   imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule],
   templateUrl: './add-birth-page.component.html',

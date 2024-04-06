@@ -21,4 +21,9 @@ export interface SignInData {
   export interface Title {
     title: string;
   }
+
+  export interface DataItem {
+    date: string; // Assuming date is of type string
+    count: number;
+  }
   

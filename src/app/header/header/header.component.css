@@ -1,0 +1,60 @@
+.header {
+    position: fixed;
+    font-family: "Manrope", sans-serif;
+    top: 0;
+    width: 100%;
+    height: 5em;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 5px 0.2px rgb(212, 212, 212);
+    z-index: 2;
+  }
+  
+  .logo h1 {
+    font-weight: 300;
+    color: #338255;
+  }
+  
+  .logo h1{
+    cursor: pointer;
+  }
+  
+  .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+  }
+  
+  .head-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .head .head-user p.listing-username {
+    text-transform: capitalize;
+    color: #338255;
+    margin: 0;
+    padding: 0 10px;
+  }
+  
+  .head-user button {
+    margin: 0;
+    padding: 12px 15px;
+    color: #338255;
+    border: .3px solid #338255;
+    border-radius: 50px;
+    background-color: #fefefe;
+  
+  }
+  
+  .head-user button:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #338255;
+  }
+  
+  

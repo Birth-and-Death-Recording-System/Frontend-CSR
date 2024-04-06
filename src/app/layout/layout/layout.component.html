@@ -1,0 +1,15 @@
+<div class="main">
+    <div class="header">
+      <app-header [userData]="userData"></app-header>
+    </div>
+    <div class="side-bar">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="main-data">
+      <!-- [pageTitle]="pageTitle" -->
+      <app-page-title />
+      <div class="outlet">
+        <router-outlet />
+      </div>
+    </div>
+</div>

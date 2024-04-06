@@ -1,0 +1,17 @@
+<div class="main">
+    <header class="header">
+      <div class="head">
+        <div class="logo">
+          <h1 routerLink="home">B&<span>D</span></h1>
+        </div>
+        <div class="head-user">
+          <div>
+            <p class="listing-username">{{ userData?.username }}</p>
+          </div>
+          <div class="user-btn">
+            <button routerLink="/profile" class="btn"><fa-icon [icon]="faUser"></fa-icon></button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
