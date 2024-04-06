@@ -4,11 +4,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
+import { RouterLink } from '@angular/router';
+import { BirthComponent } from '../../../birth/birth/birth.component';
 
 @Component({
   selector: 'app-add-birth',
   standalone: true,
-  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule],
+  imports: [FontAwesomeModule, HttpClientModule, ReactiveFormsModule, RouterLink, BirthComponent],
   templateUrl: './add-birth-page.component.html',
   styleUrl: './add-birth-page.component.css'
 })
@@ -61,7 +63,7 @@ export class AddBirthPageComponent implements OnInit {
     });
 
     // Make request to API using token if needed
-    
+
   }
 
   onSubmit(): void {
@@ -75,6 +77,5 @@ export class AddBirthPageComponent implements OnInit {
         console.log(error);
       }
     });
-   
   }
 }
