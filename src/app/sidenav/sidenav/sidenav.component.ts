@@ -13,18 +13,8 @@ export class SidenavComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  // logout(): void {
-  //   this.authService.logout().subscribe(
-  //     () => {
-  //       // Clear any stored user data or tokens
-  //       sessionStorage.removeItem('token')
-  //       // Redirect to the login page or any other desired page
-  //       this.router.navigate(['/login']);
-  //     },
-  //     (error: any) => {
-  //       // Handle error
-  //       console.error('Logout failed:', error);
-  //     }
-  //   );
-  // }
+  /// Method to trigger logout
+  onLogout(): void {
+    this.authService.logout();
+  }
 }

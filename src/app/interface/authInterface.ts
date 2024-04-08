@@ -16,6 +16,10 @@ export interface SignInData {
   export interface userResponse {
     token: string;
     user: User;
+    userData: {
+      username: string
+      id: string
+    }
   }
   
   export interface Title {

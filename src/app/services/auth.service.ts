@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SignInData, userResponse } from '../interface/authInterface';
 import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Router, RouterLink } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  logout() {
-    throw new Error('Method not implemented.');
-  }
+  router: any;
 
   constructor(private http: HttpClient,) {}
 
@@ -19,6 +18,8 @@ export class AuthService {
         tap(response => {
           if (response && response.token) {
             this.storeToken(response.token);
+            this.setUsername(response.userData.username)
+            this.setUserId(response.userData.id)
           }
         }),
       );
@@ -40,12 +41,31 @@ export class AuthService {
     return localStorage.getItem('pageTitle')
   }
 
+  private setUsername(username: string){
+    sessionStorage.setItem('username', username)
+  }
   
+  private setUserId(id: string){
+    sessionStorage.setItem('id', id)
+    
+  }
+
   getToken() {
   const token= sessionStorage.getItem('token');
   console.log(token, 'token');
   return token;
 
+  }
+
+  getUsername(){
+    const username =  sessionStorage.getItem("username")
+    console.log(username, 'username')
+    return username
+  }
+
+  getUserId(){
+    const userId = sessionStorage.getItem('id')
+    return userId
   }
 
   submitBirthData(data: any) {
@@ -91,5 +111,52 @@ export class AuthService {
         return throwError(() => error); // Return the error as an Observable
       })
     );
+  }
+
+  updateBirth(data: any, id: number): Observable<any> {
+    return this.http.put(`http://localhost:8000/births/${id}/`, data).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  updateDeath(data: any, id: number): Observable<any> {
+    return this.http.put(`http://localhost:8000/deaths/${id}/`, data).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  deleteBirth(id: number): Observable<any> {
+    return this.http.delete(`http://localhost:8000/births/${id}/`).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  deleteDeath(id: number): Observable<any> {
+    return this.http.delete(`http://localhost:8000/deaths/${id}/`).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  // Method to clear authentication state and log out the user
+  logout(): void {
+    // Clear any authentication-related data (e.g., user token, user object, etc.)
+    // For example:
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('username');
+    // Navigate the user to the login page or any other appropriate page
+    this.router.navigate(['']);
   }
 }

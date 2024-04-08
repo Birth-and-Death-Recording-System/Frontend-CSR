@@ -57,6 +57,9 @@ export class AddDeathComponent implements OnInit{
 
   onSubmit(): void {
     const deathData = this.DeathForm.value;
+    const userId = this.authService.getUserId();
+    const id = parseInt(userId!, 10) 
+    deathData.user = id;
     this.authService.submitDeathData(deathData).subscribe({
       next: (response: any) => {
         console.log(response);

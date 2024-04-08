@@ -7,12 +7,14 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
 
   console.log('interceptor');
 const authService = inject(AuthService);
-const token = req.clone({
+
+const authReq = req.clone({
   setHeaders:{
-    Authorization: `Token ${authService.getToken()}`
+    Authorization: `Token ${authService.getToken()}`,
+
   }
 }
 );
-  return next(token)
+  return next(authReq)
 
 };

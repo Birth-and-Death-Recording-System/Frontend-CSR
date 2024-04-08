@@ -78,6 +78,9 @@ export class AddBirthPageComponent implements OnInit {
 
   onSubmit(): void {
     const birthData = this.birthForm.value;
+    const userId = this.authService.getUserId();
+    const id = parseInt(userId!, 10) 
+    birthData.user = id;
     this.authService.submitBirthData(birthData).subscribe({
       next: (response: any) => {
         console.log(response);
