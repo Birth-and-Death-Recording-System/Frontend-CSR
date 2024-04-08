@@ -1,0 +1,176 @@
+<div class="main-display">
+    <div class="container">
+      <div class="head">
+        <div class="title">
+          <h2>Add death</h2>
+        </div>
+        <div class="close">
+          <button>
+            <fa-icon [icon]="faRemove"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <div class="add-forms">
+        <form (ngSubmit)="onSubmit()" [formGroup]="DeathForm">
+          <div class="deadInfo dead">
+            <div>
+              <label>Deceased Details</label>
+            </div>
+            <div class="first">
+              <input
+                type="text"
+                formControlName="surname"
+                placeholder="Surname"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="first_name"
+                placeholder="First Name"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="Other_name"
+                placeholder="Other Name"
+                class="input"
+                required
+              />
+              <input
+                type="date"
+                formControlName="birth_date"
+                placeholder="Date of Birth"
+                class="input"
+                required
+              />
+              <select formControlName="Gender" class="input" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+              <select formControlName="Nationality" class="input">
+                <option *ngFor="let country of countries">{{ country.name.common }}</option>
+              </select>
+            </div>
+            <div class="second">
+              <select formControlName="ID_Type" class="input" required>
+                <option value="" disabled selected>ID Type</option>
+                <option value="G">Ghana Card</option>
+                <option value="V">Voter's ID</option>
+                <option value="N">NHIS</option>
+                <option value="D">Driver's License</option>
+                <option value="P">Passport</option>
+              </select>
+              <input
+                type="text"
+                formControlName="ID_Number"
+                placeholder="ID Number"
+                class="input"
+                required
+              />
+              <select formControlName="Residence_addr" class="input" required>
+                <option value="" disabled selected>Burial Status</option>
+                <option value="B">Buried</option>
+                <option value="N">Not Buried</option>
+              </select>
+              
+              
+            </div>
+          </div>
+
+          <div class="deadinfo">
+            <div>
+              <label>Deceased Identification</label>
+            </div>
+            <div class="third">
+              <input
+                type="date"
+                formControlName="date"
+                placeholder="Date of Death"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="Cause_of_Death"
+                placeholder="Cause of Death"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="Place_of_Death"
+                placeholder="Place of Death"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="Address_of_place"
+                placeholder="Address of Place"
+                class="input"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="informant">
+            <div>
+              <label>Informant Details</label>
+            </div>
+            <div>
+              <input
+                type="text"
+                formControlName="Informant_Name"
+                placeholder="Informant Name"
+                class="input"
+                required
+              />
+              <select formControlName="Informant_ID_Type" class="input" required>
+                <option value="" disabled selected>ID Type</option>
+                <option value="G">Ghana Card</option>
+                <option value="V">Voter's ID</option>
+                <option value="N">NHIS</option>
+                <option value="D">Driver's License</option>
+                <option value="P">Passport</option>
+              </select>
+              <input
+                type="text"
+                formControlName="Informant_ID_Number"
+                placeholder="ID Number"
+                class="input"
+                required
+              />
+              <select formControlName="Relationship_Type" class="input" required>
+                <option value="" disabled selected>Relationship</option>
+                <option value="P">Parent</option>
+                <option value="S">Sibling</option>
+                <option value="Se">Self</option>
+                <option value="G">Guardian</option>
+                <option value="O">Other</option>
+              </select>
+              <input
+                type="text"
+                formControlName="Phone_Number"
+                placeholder="Phone Number"
+                class="input"
+                required
+              />
+              <input
+                type="text"
+                formControlName="Email_Address"
+                placeholder="Email"
+                class="input"
+                required
+              />
+            </div>
+          </div>
+          <div class="btn">
+            <button class="primary" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

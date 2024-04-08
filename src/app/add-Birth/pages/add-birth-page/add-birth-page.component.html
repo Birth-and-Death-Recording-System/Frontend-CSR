@@ -50,37 +50,70 @@
           </div>
         </div>
 
-        <div class="babyInfo">
-          <div>
-            <label>Father Details</label>
-          </div>
-          <div>
-            <input type="text" formControlName="Father_First_Name" placeholder="First Name" class="input" required />
-            <input type="text" formControlName="Father_Last_Name" placeholder="Last Name" class="input" required />
-            <!-- <input
+            <div class="babyInfo">
+              <div>
+                <label>Father Details</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  formControlName="Father_First_Name"
+                  placeholder="First Name"
+                  class="input"
+                  required
+                />
+                <input
+                  type="text"
+                  formControlName="Father_Last_Name"
+                  placeholder="Last Name"
+                  class="input"
+                  required
+                />
+                <!-- <input
                   type="text"
                   formControlName="Father_Nationality"
                   placeholder="Nationality"
                   class="input"
                   required
                 />   -->
-            <select formControlName="Father_Nationality" class="input">
-              <option *ngFor="let country of countries">{{ country.name.common }}</option>
-            </select>
-            <select formControlName="Father_ID_type" class="choice" required>
-              <option value="" disabled selected>ID Type</option>
-              <option value="G">Ghana Card</option>
-              <option value="V">Voter's ID</option>
-              <option value="N">NHIS</option>
-              <option value="D">Driver's License</option>
-              <option value="P">Passport</option>
-            </select>
-            <input type="text" formControlName="Father_ID_Number" placeholder="ID Number" class="input" required />
-            <input type="date" formControlName="Father_DOB" placeholder="Date of Birth" class="input" required />
-            <input type="text" formControlName="Father_Phone_Number" placeholder="Phone Number" class="input"
-              required />
-          </div>
-        </div>
+                <select formControlName="Father_Nationality" class="input">
+                  <option *ngFor="let country of countries">{{ country.name.common }}</option>
+                </select>
+                <select
+                  formControlName="Father_ID_type"
+                  class="choice"
+                  required
+                >
+                  <option value="" disabled selected>ID Type</option>
+                  <option value="G">Ghana Card</option>
+                  <option value="V">Voter's ID</option>
+                  <option value="N">NHIS</option>
+                  <option value="D">Driver's License</option>
+                  <option value="P">Passport</option>
+                </select>
+                <input
+                  type="text"
+                  formControlName="Father_ID_Number"
+                  placeholder="ID Number"
+                  class="input"
+                  required
+                />
+                <input
+                  type="date"
+                  formControlName="Father_DOB"
+                  placeholder="Date of Birth"
+                  class="input"
+                  required
+                />
+                <input
+                  type="text"
+                  formControlName="Father_Phone_Number"
+                  placeholder="Phone Number"
+                  class="input"
+                  required
+                />
+              </div>
+            </div>
 
         <div class="babyInfo">
           <div>
@@ -89,13 +122,6 @@
           <div>
             <input type="text" formControlName="Mother_First_Name" placeholder="First Name" class="input" required />
             <input type="text" formControlName="Mother_Last_Name" placeholder="Last Name" class="input" required />
-            <!-- <input
-                  type="text"
-                  formControlName="Mother_Nationality"
-                  placeholder="Nationality"
-                  class="input"
-                  required
-                /> -->
 
             <select formControlName="Mother_Nationality" class="input">
               <option *ngFor="let country of countries">{{ country.name.common }}</option>
