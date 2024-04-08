@@ -34,24 +34,23 @@
   color: #338255;
   border-radius: 5px;
   align-items: center;
-  /* flex-direction: column; */
   justify-content: center;
   justify-content: space-between;
   background-color: white;
   border: .5px #33825594 solid;
-  box-shadow: 0 0 5px #33825574;
+  box-shadow: 0 0 3px #33825574;
 }
 
 .birth h3 {
   margin: 0;
   font-size: 30px;
-  padding: 3px 0 3px 30px;
+  padding: 3px 0 3px 80px;
 }
 
 .birth p {
   margin: 0;
   font-size: 50px;
-  padding: 3px 30px 3px 30px;
+  padding: 3px 100px 3px 30px;
 }
 
 .death {
@@ -61,31 +60,29 @@
   display: flex;
   color: #338255;
   border-radius: 5px;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
   background-color: white;
+  justify-content: space-between;
   border: .5px #33825594 solid;
-  box-shadow: 0 0 5px #33825574;
+  box-shadow: 0 0 3px #33825574;
 }
 
 .death h3 {
   margin: 0;
-  font-size: 20px;
-  padding: 3px 0 3px 30px;
+  font-size: 30px;
+  padding: 3px 0 3px 80px;
 }
 
 .death p {
   margin: 0;
-  font-size: 16px;
-  padding: 3px 0 3px 30px;
+  font-size: 50px;
+  padding: 3px 100px 3px 30px;
 }
 
 .graph {
   margin-top: 30px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-top: 10px 10px 10px 10px ;
   height: 100%;
   width: 95.5%;
   color: #338255;

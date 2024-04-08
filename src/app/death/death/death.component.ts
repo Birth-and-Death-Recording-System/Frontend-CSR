@@ -13,16 +13,16 @@ import { Subscription, interval } from 'rxjs';
   standalone: true,
   imports: [
     SearchBarComponent,
-     AddDeathComponent, 
-     FontAwesomeModule, 
-     RouterLink,
-     RouterOutlet,
-     CommonModule
+    AddDeathComponent,
+    FontAwesomeModule,
+    RouterLink,
+    RouterOutlet,
+    CommonModule,
   ],
   templateUrl: './death.component.html',
-  styleUrl: './death.component.css'
+  styleUrl: './death.component.css',
 })
-export class DeathComponent implements OnInit{
+export class DeathComponent implements OnInit {
   faRemove = faRemove;
   faEdit = faEdit;
   faTrash = faTrash;
@@ -32,7 +32,7 @@ export class DeathComponent implements OnInit{
   refreshInterval: number = 50000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
 
-  constructor(private authService: AuthService) { } // Inject BirthService
+  constructor(private authService: AuthService) {} // Inject BirthService
 
   ngOnInit(): void {
     this.loadDeaths(); // Call loadBirths method when component initializes

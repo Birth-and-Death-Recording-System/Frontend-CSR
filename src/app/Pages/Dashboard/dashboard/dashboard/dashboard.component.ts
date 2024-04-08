@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { faCakeCandles, faBedPulse, faChartSimple } from '@fortawesome/free-solid-svg-icons';
+import { faChartSimple } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { HomeComponent } from '../../../../home/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -14,13 +14,11 @@ import { LineChartComponent } from '../../../../line-chart/line-chart/line-chart
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  faCakeCandles = faCakeCandles;
-  faBedPulse = faBedPulse;
   faChartSimple = faChartSimple;
 
   birthsCount: number = 0;
   deathsCount: number = 0;
-  
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

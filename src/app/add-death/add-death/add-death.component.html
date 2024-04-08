@@ -50,11 +50,11 @@
                 <option value="M">Male</option>
                 <option value="F">Female</option>
               </select>
+            </div>
+            <div class="second">
               <select formControlName="Nationality" class="input">
                 <option *ngFor="let country of countries">{{ country.name.common }}</option>
               </select>
-            </div>
-            <div class="second">
               <select formControlName="ID_Type" class="input" required>
                 <option value="" disabled selected>ID Type</option>
                 <option value="G">Ghana Card</option>
@@ -75,8 +75,6 @@
                 <option value="B">Buried</option>
                 <option value="N">Not Buried</option>
               </select>
-              
-              
             </div>
           </div>
 
