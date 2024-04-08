@@ -12,16 +12,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     SearchBarComponent,
-     AddDeathComponent, 
-     FontAwesomeModule, 
-     RouterLink,
-     RouterOutlet,
-     CommonModule
+    AddDeathComponent,
+    FontAwesomeModule,
+    RouterLink,
+    RouterOutlet,
+    CommonModule,
   ],
   templateUrl: './death.component.html',
-  styleUrl: './death.component.css'
+  styleUrl: './death.component.css',
 })
-export class DeathComponent implements OnInit{
+export class DeathComponent implements OnInit {
   faRemove = faRemove;
   faEdit = faEdit;
   faTrash = faTrash;
@@ -29,7 +29,7 @@ export class DeathComponent implements OnInit{
   deaths: any[] = []; // Property to store the birth data
   error: string = ''; // Property to store error messages
 
-  constructor(private authService: AuthService) { } // Inject BirthService
+  constructor(private authService: AuthService) {} // Inject BirthService
 
   ngOnInit(): void {
     this.loadDeaths(); // Call loadBirths method when component initializes
