@@ -8,7 +8,7 @@
     align-items: center;
     overflow: none;
   }
-  
+
   .container {
     font-family: "Manrope", sansarif;
     height: 100vh;
@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
     background-image: url("/assets/background.jpeg");
   }
-  
+
   .login {
     margin: 0;
     padding: 0;
@@ -31,61 +31,61 @@
     color: rgb(0, 0, 0);
     background-color: rgb(241, 241, 241);
   }
-  
+
   .login h2 {
-    color: rgb(0, 0, 0);
+    color: #338255;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 3px;
     text-transform: capitalize;
     margin: 20px 0;
-    text-shadow: 0 .3px .5px rgb(145, 145, 145);
+    /* text-shadow: 0 .3px .5px rgb(145, 145, 145); */
   }
-  
+
   form .login-details .login-name {
     color: azure;
     display: flex;
     flex-direction: row;
     margin: 10px 20px;
   }
-  
+
   form .login-details .login-name .input {
     width: 28em;
     height: 3em;
     border: none;
-    color: rgb(28, 28, 28);
+    color: rgb(42, 42, 42);
     font-weight: 400;
     text-align: left;
     padding: 0 0 0 10px;
     letter-spacing: .5px;
     background: transparent;
     border-radius: 3px 3px 3px 3px;
-    border: .5px rgb(81, 81, 81) solid;
+    border: .5px #338255 solid;
     box-shadow: 0px 0px 1px .5px rgb(240, 240, 240);
   }
-  
+
   form .login-details .login-password {
     color: azure;
     display: flex;
     flex-direction: row;
     margin: 10px 20px;
   }
-  
+
   form .login-details .login-password .input {
     width: 28em;
     height: 3em;
     border: none;
-    color: rgb(28, 28, 28);
+    color: rgb(42, 42, 42);
     font-weight: 400;
     text-align: left;
     padding: 0 0 0 10px;
     letter-spacing: .5px;
     background: transparent;
     border-radius: 3px 3px 3px 3px;
-    border: .5px rgb(81, 81, 81) solid;
+    border: .5px #338255 solid;
     box-shadow: 0px 0px 1px .5px rgb(240, 240, 240);
   }
-  
+
   form .btnLnk {
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -97,18 +97,17 @@
     border-radius: 5px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    background-color: rgb(40, 40, 40);
+    background-color: #338255;
     box-shadow: 0 0 3px .3px #e0dbdb;
   }
-  
+
   form .btnLnk:hover {
-    color: rgb(30, 30, 30);
-    border: .5px rgb(81, 81, 81) solid;
+    color: #338255;
+    border: .5px #338255 solid;
     background-color: rgb(255, 255, 255);
-    transition: .2s ease-in-out;
+    transition: .3s ease-in-out;
   }
-  
+
   form a {
     text-decoration: none;
   }
-  
