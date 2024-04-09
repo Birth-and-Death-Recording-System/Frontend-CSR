@@ -37,11 +37,11 @@
             <td>{{ death.Burial_Status == 'B' ? 'Buried' :'Not Buried' }}</td>
             <td>{{ death.Nationality }}</td>
             <td class="btn-center">
-              <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
+              <button class="btn"><fa-icon [icon]="faEdit" [routerLink]="['edit-death', death.id]"></fa-icon></button>
             </td>
             <td class="btn-center">
               <button class="btn" (click)="deleteDeath(death.id)">
-                <fa-icon [icon]="faTrash"></fa-icon>
+                <fa-icon [icon]="faTrash" ></fa-icon>
               </button>
             </td>
           </tr>

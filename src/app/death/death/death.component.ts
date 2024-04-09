@@ -62,20 +62,6 @@ export class DeathComponent implements OnInit {
       this.loadDeaths();
     });
   }
-
-  updateDeathRecord(updatedData: any, id: number) {
-    this.deathService.updateDeath(updatedData, id).subscribe(
-      (response: any) => {
-        console.log('Death record updated successfully:', response);
-        // Optionally, perform any additional actions after successful update
-        this.loadDeaths(); // Refresh the death list after updating
-      },
-      (error: any) => {
-        console.error('Error updating death record:', error);
-        // Optionally, display an error message or handle the error in UI
-      }
-    );
-  }
   
 
   deleteDeath(id: number){
