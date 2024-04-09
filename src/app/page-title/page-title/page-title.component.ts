@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { User } from '../../interface/authInterface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-page-title',
@@ -13,16 +14,10 @@ export class PageTitleComponent implements OnInit {
   @Input()
   Title?: Title;
 
-  userData?: User;
+  user = this.authService.getUsername();
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    if (typeof window !== 'undefined') {
-      const userData = localStorage.getItem('userData');
-      if (userData !== null) {
-        this.userData = JSON.parse(userData);
-      }
-    }
-  }
+  ngOnInit(): void {}
+   
 }
