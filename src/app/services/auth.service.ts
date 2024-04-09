@@ -8,9 +8,8 @@ import { Router, RouterLink } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  router: any;
 
-  constructor(private http: HttpClient,) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   signIn(userData: SignInData) {
     return this.http
@@ -59,7 +58,6 @@ export class AuthService {
 
   getUsername(){
     const username =  sessionStorage.getItem("username")
-    console.log(username, 'username')
     return username
   }
 
