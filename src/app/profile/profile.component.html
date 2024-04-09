@@ -1,5 +1,55 @@
 <div class="main">
-    <div class="container">
-        <p>profile works</p>
+  <div class="container">
+    <div class="add-forms">
+      <form>
+        <div class="babyInfo">
+          <div>
+            <label>Edit Profile</label>
+            <p>This will be displayed on your profile</p>
+          </div>
+          <div>
+            <input type="text" formControlName="first_name" placeholder="First Name" class="input" required />
+            <input type="text" formControlName="last_name" placeholder="Last Name" class="input" required />
+            <input type="text" formControlName="username" placeholder="Username" class="input" required />
+          </div>
+        </div>
+
+        <div class="informant">
+
+          <div>
+            <input type="date" formControlName="birth_date" placeholder="Birth Date" class="input" required />
+            <input type="email" formControlName="email" placeholder="Email" class="input" required />
+            <input type="text" formControlName="phone_number" placeholder="Phone Number" class="input" required />
+          </div>
+        </div>
+
+        <div class="babyInfo">
+          <div>
+            <label>Gender</label>
+          </div>
+          <div>
+            <select formControlName="gender" class="choice" required>
+              <option value="" disabled selected>Gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="babyInfo">
+          <div>
+            <label>Edit password</label>
+            <p>You will need these credentials when logging in</p>
+          </div>
+          <div>
+            <input type="password" formControlName="" placeholder="" class="input" required />
+            <input type="password" formControlName="" placeholder="" class="input" required />
+            <input type="password" formControlName="" placeholder="" class="input" required />
+          </div>
+        </div>
+        <div class="btn">
+          <button class="primary" type="submit">Save Password</button>
+        </div>
+      </form>
     </div>
-</div>
+  </div>
