@@ -1,0 +1,143 @@
+<div class="main-display">
+    <div class="container">
+      <div class="head">
+        <div class="title">
+          <h2>Edit Birth</h2>
+        </div>
+        <div class="close">
+          <button>
+            <fa-icon [icon]="faTimes"></fa-icon>
+          </button>
+        </div>
+      </div>
+      <div class="add-forms">
+        <form (ngSubmit)="updateBirthData()" [formGroup]="birthForm">
+          <div class="babyInfo">
+            <div>
+              <label>Baby Details</label>
+            </div>
+            <div>
+              <input type="text" formControlName="First_Name" placeholder="First Name" class="input" required />
+              <input type="text" formControlName="Last_Name" placeholder="Last Name" class="input" required />
+              <input type="text" formControlName="Other_Name" placeholder="Other Name" class="input" required />
+              <input type="date" formControlName="date" placeholder="dd-mm-yyyy" class="input" required />
+              <select formControlName="gender" class="choice" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+              </select>
+              <input type="text" formControlName="City" placeholder="City" class="input" required />
+              <input type="text" formControlName="Place_of_Birth" placeholder="Place of Birth" class="input" required />
+            </div>
+          </div>
+  
+          <div class="informant">
+            <div>
+              <label>Informant</label>
+            </div>
+            <div>
+              <input type="text" formControlName="Informant_name" placeholder="Informant Name" class="input" required />
+              <select formControlName="Relationship" class="input" required>
+                <option value="" disabled selected>Relationship</option>
+                <option value="P">Parent</option>
+                <option value="S">Sibling</option>
+                <option value="Se">Self</option>
+                <option value="G">Guardian</option>
+                <option value="O">Other</option>
+              </select>
+              <input type="text" formControlName="Informant_Phone_Number" placeholder="Phone Number" class="input"
+                required />
+            </div>
+          </div>
+  
+              <div class="babyInfo">
+                <div>
+                  <label>Father Details</label>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    formControlName="Father_First_Name"
+                    placeholder="First Name"
+                    class="input"
+                    required
+                  />
+                  <input
+                    type="text"
+                    formControlName="Father_Last_Name"
+                    placeholder="Last Name"
+                    class="input"
+                    required
+                  />
+                  <select formControlName="Father_Nationality" class="input">
+                    <option *ngFor="let country of countries">{{ country.name.common }}</option>
+                  </select>
+                  <select
+                    formControlName="Father_ID_type"
+                    class="choice"
+                    required
+                  >
+                    <option value="" disabled selected>ID Type</option>
+                    <option value="G">Ghana Card</option>
+                    <option value="V">Voter's ID</option>
+                    <option value="N">NHIS</option>
+                    <option value="D">Driver's License</option>
+                    <option value="P">Passport</option>
+                  </select>
+                  <input
+                    type="text"
+                    formControlName="Father_ID_Number"
+                    placeholder="ID Number"
+                    class="input"
+                    required
+                  />
+                  <input
+                    type="date"
+                    formControlName="Father_DOB"
+                    placeholder="Date of Birth"
+                    class="input"
+                    required
+                  />
+                  <input
+                    type="text"
+                    formControlName="Father_Phone_Number"
+                    placeholder="Phone Number"
+                    class="input"
+                    required
+                  />
+                </div>
+              </div>
+  
+          <div class="babyInfo">
+            <div>
+              <label>Mothers Details</label>
+            </div>
+            <div>
+              <input type="text" formControlName="Mother_First_Name" placeholder="First Name" class="input" required />
+              <input type="text" formControlName="Mother_Last_Name" placeholder="Last Name" class="input" required />
+  
+              <select formControlName="Mother_Nationality" class="input">
+                <option *ngFor="let country of countries">{{ country.name.common }}</option>
+              </select>
+              <select formControlName="Mother_ID_type" class="choice" required>
+                <option value="" disabled selected>ID Type</option>
+                <option value="G">Ghana Card</option>
+                <option value="V">Voter's ID</option>
+                <option value="N">NHIS</option>
+                <option value="D">Driver's License</option>
+                <option value="P">Passport</option>
+              </select>
+              <input type="text" formControlName="Mother_ID_number" placeholder="ID Number" class="input" required />
+              <input type="date" formControlName="Mother_DOB" placeholder="Date of Birth" class="input" required />
+              <input type="text" formControlName="Mother_Phone_Number" placeholder="Phone Number" class="input"
+                required />
+            </div>
+          </div>
+          <div class="btn">
+            <button class="primary" type="submit">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

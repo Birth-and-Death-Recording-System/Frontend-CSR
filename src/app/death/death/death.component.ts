@@ -30,7 +30,7 @@ export class DeathComponent implements OnInit {
 
   deaths: any[] = []; // Property to store the birth data
   error: string = ''; // Property to store error messages
-  refreshInterval: number = 50000; // Refresh interval in milliseconds (e.g., 60 seconds)
+  refreshInterval: number = 600000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
 
   constructor(private deathService: DeathService) {} // Inject BirthService

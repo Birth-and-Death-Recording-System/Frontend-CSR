@@ -29,6 +29,15 @@ export class DeathService {
     );
   }
 
+  getDeathDetails(id: number){
+    return this.http.get(`http://localhost:8000/births/${id}/`).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
   updateDeath(data: any, id: number): Observable<any> {
     return this.http.put(`http://localhost:8000/deaths/${id}/`, data).pipe(
       catchError((error) => {

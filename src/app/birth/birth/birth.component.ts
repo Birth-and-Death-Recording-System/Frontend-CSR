@@ -4,10 +4,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from '../../search-bar/search-bar/search-bar.component';
 import { AddBirthPageComponent } from '../../add-Birth/pages/add-birth-page/add-birth-page.component';
-import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, interval } from 'rxjs';
-import { BirthServiceService } from '../../services/birth-service.service';
+import { BirthService } from '../../services/birth-service.service';
 
 
 @Component({
@@ -28,18 +27,32 @@ export class BirthComponent implements OnInit {
   faEdit = faEdit;
   faTrash = faTrash;
 
+  searchTerm: string = ''; // Property to store the search term in
+
   births: any[] = []; // Property to store the birth data
   error: string = ''; // Property to store error messages
   id: number = 0; // ID of selected birth
-  refreshInterval: number = 50000; // Refresh interval in milliseconds (e.g., 60 seconds)
+  refreshInterval: number = 600000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
+  filterData: any[] = [];
 
-  constructor(private birthService: BirthServiceService) { } // Inject BirthService
+  constructor(private birthService: BirthService, ) {
+    console.log(this.searchTerm); // Log the search term to the console
+   } // Inject BirthService
 
   ngOnInit(): void {
     this.loadBirths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
   }
+
+  onSearch(searchTerm: string) {
+    this.searchTerm = searchTerm; // Update the search term
+    this.filterData = this.births?.filter((birth: any) => {
+      console.log(this.filterData)
+      return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    });
+  }
+
 
   loadBirths() {
     this.birthService.getAllBirths().subscribe(
@@ -63,20 +76,6 @@ export class BirthComponent implements OnInit {
     this.refreshSubscription = interval(this.refreshInterval).subscribe(() => {
       this.loadBirths();
     });
-  }
-  
-  updateBirthRecord(updatedData: any, id: number) {
-    this.birthService.updateBirth(updatedData, id).subscribe(
-      (response: any) => {
-        console.log('Birth record updated successfully:', response);
-        // Optionally, perform any additional actions after successful update
-        this.loadBirths(); // Refresh the birth list after updating
-      },
-      (error: any) => {
-        console.error('Error updating birth record:', error);
-        // Optionally, display an error message or handle the error in UI
-      }
-    );
   }
   
 

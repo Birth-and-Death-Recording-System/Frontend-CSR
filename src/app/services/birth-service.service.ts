@@ -5,7 +5,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class BirthServiceService {
+export class BirthService {
 
   constructor(private http: HttpClient,) { }
 
@@ -33,7 +33,16 @@ export class BirthServiceService {
     );
   }
 
-  updateBirth(data: any, id: number): Observable<any> {
+  getbirthDetails(id: number){
+    return this.http.get(`http://localhost:8000/births/${id}/`).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  updateBirthDeatils(data: any, id: number): Observable<any> {
     return this.http.put(`http://localhost:8000/births/${id}/`, data).pipe(
       catchError((error) => {
         console.log(error);
