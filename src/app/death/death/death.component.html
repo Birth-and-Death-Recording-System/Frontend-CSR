@@ -11,7 +11,7 @@
       <div class="death">
         <table class="center">
           <colgroup>
-            <col style="width: 110px;" />
+            <col />
             <col />
             <col />
             <col />
@@ -20,20 +20,22 @@
             <col style="width: 100px;" />
           </colgroup>
           <tr>
-            <th>Surname</th>
-            <th>First Name</th>
+            <th>CIN</th>
+            <th>Name</th>
             <th>Gender</th>
             <th>Death Date</th>
             <th>Burial Status</th>
+            <th>Nationality</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
           <tr class="fist" *ngFor="let death of deaths">
-            <td>{{ death.surname }}</td>
-            <td>{{ death.first_name }}</td>
+            <td>{{ death.cin }}</td>
+            <td>{{ death.surname }}, {{ death.first_name }}</td>
             <td>{{ death.Gender === 'M' ? 'Male' : 'Female' }}</td>
             <td>{{ death.date }}</td>
             <td>{{ death.Burial_Status == 'B' ? 'Buried' :'Not Buried' }}</td>
+            <td>{{ death.Nationality }}</td>
             <td class="btn-center">
               <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
             </td>
