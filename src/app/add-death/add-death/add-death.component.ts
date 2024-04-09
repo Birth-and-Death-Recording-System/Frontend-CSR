@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRemove } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { DeathService } from '../../services/death-service.service';
 
 @Component({
   selector: 'app-add-death',
@@ -23,7 +24,8 @@ export class AddDeathComponent implements OnInit{
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private deathService: DeathService
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +62,7 @@ export class AddDeathComponent implements OnInit{
     const userId = this.authService.getUserId();
     const id = parseInt(userId!, 10) 
     deathData.user = id;
-    this.authService.submitDeathData(deathData).subscribe({
+    this.deathService.submitDeathData(deathData).subscribe({
       next: (response: any) => {
         console.log(response);
       },
