@@ -4,9 +4,8 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
-import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 import { CommonModule } from '@angular/common';
-import { BirthServiceService } from '../../../services/birth-service.service';
+import { BirthService } from '../../../services/birth-service.service';
 
 @Component({
   selector: 'app-add-birth',
@@ -15,7 +14,6 @@ import { BirthServiceService } from '../../../services/birth-service.service';
     FontAwesomeModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSelectCountryModule,
     CommonModule,
   ],
   templateUrl: './add-birth-page.component.html',
@@ -25,7 +23,7 @@ import { BirthServiceService } from '../../../services/birth-service.service';
 export class AddBirthPageComponent implements OnInit {
   faTimes = faTimes;
 
-  dataSource: any[] = [];
+  // dataSource: any[] = [];
   countries: any[] = [];
   birthForm!: FormGroup; // Define form group for birth details
 
@@ -35,7 +33,7 @@ export class AddBirthPageComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private fb: FormBuilder,
-    private birthService: BirthServiceService
+    private birthService: BirthService
   ) {}
 
   token = this.authService.getToken();
@@ -80,10 +78,6 @@ export class AddBirthPageComponent implements OnInit {
     // Make request to API using token if needed
   }
 
-  // validateDate(control: FormControl): { [key: string]: any } | null {
-  //   const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(control.value);
-  //   return isValidDate ? null : { 'invalidDate': true };
-  // }
 
   onSubmit(): void {
     const birthData = this.birthForm.value;

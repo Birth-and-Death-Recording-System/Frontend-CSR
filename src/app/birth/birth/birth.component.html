@@ -2,7 +2,7 @@
     <div class="container">
       <div class="add-search">
         <div class="search-bar">
-          <app-search-bar />
+          <app-search-bar [SearchText]="searchTerm" (SearchTextChange)="onSearch($event)"></app-search-bar>
         </div>
         <div class="add-birth">
           <a routerLink="add-birth" class="primary" type="button">
@@ -32,7 +32,7 @@
             <th>Edit</th>
             <th>Delete</th>
           </tr>
-          <tr class="fist" *ngFor="let birth of births">
+          <tr class="fist" *ngFor="let birth of births || filterData">
             <td>{{ birth.CIN }}</td>
             <td>{{ birth.First_Name }}</td>
             <td>{{ birth.Gender === 'M' ? 'Male' : 'Female' }}</td>
@@ -40,7 +40,7 @@
             <td>{{ birth.Place_of_Birth }}</td>
             <td>{{ birth.City }}</td>
             <td class="btn-center">
-              <button class="btn"><fa-icon [icon]="faEdit"></fa-icon></button>
+              <button class="btn"><fa-icon [icon]="faEdit" [routerLink]="['edit-birth', birth.id]" ></fa-icon></button>
             </td>
             <td class="btn-center">
               <button class="btn" (click)="deleteBirth(birth.id)">

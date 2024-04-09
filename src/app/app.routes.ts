@@ -7,6 +7,8 @@ import { AddBirthPageComponent } from './add-Birth/pages/add-birth-page/add-birt
 import { BirthComponent } from './birth/birth/birth.component';
 import { DeathComponent } from './death/death/death.component';
 import { AddDeathComponent } from './add-death/add-death/add-death.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditBirthComponent } from './edit-birth/edit-birth/edit-birth.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +25,11 @@ export const routes: Routes = [
         component: DashboardComponent,
       },
       {
+        path: 'profile',
+        component: ProfileComponent,
+        title: 'Profile'
+      },
+      {
         path: 'dashboard',
         component: DashboardComponent,
       },
@@ -34,6 +41,11 @@ export const routes: Routes = [
             path: 'add-birth',
             component: AddBirthPageComponent,
             title: 'Add Birth',
+          },
+          {
+            path: 'edit-birth/:id',
+            component: EditBirthComponent,
+            title: 'Edit Birth',
           },
         ],
         title: 'Birth',

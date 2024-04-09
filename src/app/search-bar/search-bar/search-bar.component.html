@@ -1,6 +1,4 @@
 <div class="search">
-    <form action="">
-      <input type="text" placeholder="Filter by Name" />
-      <button class="primary" type="button">Search</button>
-    </form>
+      <input type="text" [(ngModel)]="SearchText" placeholder="Filter by Name" />
+      <button class="primary" type="button" (click)="onSearch()">Search</button> 
 </div>
