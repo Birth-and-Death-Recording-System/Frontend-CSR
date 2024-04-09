@@ -32,14 +32,6 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
-  getUserData() {
-    return localStorage.getItem('userData');
-  }
-
-  getPageTitle() {
-    return localStorage.getItem('pageTitle')
-  }
-
   private setUsername(username: string){
     sessionStorage.setItem('username', username)
   }
