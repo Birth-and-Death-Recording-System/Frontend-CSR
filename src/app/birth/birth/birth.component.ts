@@ -44,7 +44,7 @@ export class BirthComponent implements OnInit {
     this.authService.getAllBirths().subscribe(
       (data: any) => {
         // Handle successful response here
-        console.log(data); // Log the response data to the console
+        console.log(data); // Log the response data to the consolez
         this.births = data; // Store the birth data
         this.error = ''; // Clear any previous error message
         // this.loadBirths(); // Reload the page after adding a birth

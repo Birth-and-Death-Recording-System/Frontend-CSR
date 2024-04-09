@@ -34,7 +34,7 @@
           </tr>
           <tr class="fist" *ngFor="let birth of births">
             <td>{{ birth.CIN }}</td>
-            <td>{{ birth.First_Name }}</td>
+            <td>{{ birth.First_Name }} {{ birth.Last_Name }}</td>
             <td>{{ birth.Gender === 'M' ? 'Male' : 'Female' }}</td>
             <td>{{ birth.date }}</td>
             <td>{{ birth.Place_of_Birth }}</td>
