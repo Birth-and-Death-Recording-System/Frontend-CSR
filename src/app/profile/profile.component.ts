@@ -18,7 +18,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
-  profileForm! : FormGroup
+  profileForm!: FormGroup
   profileData: any
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder, private authService: AuthService) { }
@@ -48,17 +48,17 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  onSubmit(){
+  onSubmit() {
     const updatedProfileData = this.profileForm.value;
     const userId = this.authService.getUserId();
-    const id = parseInt(userId!, 10) 
+    const id = parseInt(userId!, 10)
     updatedProfileData.user = id
     this.http.put(`http://localhost:8000/profile/`, updatedProfileData).subscribe(
       (data: any) => {
         console.log("Profile updated successfully", data);
       },
       (error: any) => {
-        console.error("Error updateing profile",error);
+        console.error("Error updateing profile", error);
       }
     );
   }

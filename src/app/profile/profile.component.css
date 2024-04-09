@@ -1,0 +1,12 @@
+.main {
+  position: absolute;
+  top: 16%;
+  left: 18%;
+  object-fit: contain;
+  width: 79vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}

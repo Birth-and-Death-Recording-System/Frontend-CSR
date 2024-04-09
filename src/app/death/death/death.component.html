@@ -15,12 +15,10 @@
             <col />
             <col />
             <col />
-            <col />
             <col style="width: 100px;" />
             <col style="width: 100px;" />
           </colgroup>
           <tr>
-            <th>CIN</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Death Date</th>
@@ -30,8 +28,7 @@
             <th>Delete</th>
           </tr>
           <tr class="fist" *ngFor="let death of deaths">
-            <td>{{ death.cin }}</td>
-            <td>{{ death.surname }}, {{ death.first_name }}</td>
+            <td>{{ death.surname }} {{ death.first_name }}</td>
             <td>{{ death.Gender === 'M' ? 'Male' : 'Female' }}</td>
             <td>{{ death.date }}</td>
             <td>{{ death.Burial_Status == 'B' ? 'Buried' :'Not Buried' }}</td>
@@ -45,7 +42,7 @@
               </button>
             </td>
           </tr>
-          <tr class="second">
+          <!-- <tr class="second"> -->
         </table>
         <div>
           <router-outlet/>

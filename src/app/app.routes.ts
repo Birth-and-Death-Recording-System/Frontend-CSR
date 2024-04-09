@@ -24,15 +24,17 @@ export const routes: Routes = [
       {
         path: 'home',
         component: DashboardComponent,
+        title: 'Home'
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        title: 'Home'
       },
       {
         path: 'profile',
         component: ProfileComponent,
         title: 'Profile'
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
       },
       {
         path: 'birth',
@@ -70,6 +72,5 @@ export const routes: Routes = [
         title: 'Death',
       },
     ],
-    title: 'Home',
   },
 ];

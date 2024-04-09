@@ -21,13 +21,13 @@
 .bd {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 30px;
   width: 80vw;
 }
 
 .birth {
   margin: 0;
-  width: 49%;
+  width: 46%;
   height: 10.3vh;
   display: flex;
   flex-direction: row;
@@ -55,7 +55,7 @@
 
 .death {
   margin: 0;
-  width: 49%;
+  width: 46%;
   height: 10.3vh;
   display: flex;
   color: #338255;
