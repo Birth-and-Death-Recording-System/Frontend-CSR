@@ -6,6 +6,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 import { CommonModule } from '@angular/common';
+import { BirthServiceService } from '../../../services/birth-service.service';
 
 @Component({
   selector: 'app-add-birth',
@@ -33,7 +34,8 @@ export class AddBirthPageComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private birthService: BirthServiceService
   ) {}
 
   token = this.authService.getToken();
@@ -88,7 +90,7 @@ export class AddBirthPageComponent implements OnInit {
     const userId = this.authService.getUserId();
     const id = parseInt(userId!, 10) 
     birthData.user = id;
-    this.authService.submitBirthData(birthData).subscribe({
+    this.birthService.submitBirthData(birthData).subscribe({
       next: (response: any) => {
         console.log(response);
       },

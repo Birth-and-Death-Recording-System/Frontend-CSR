@@ -7,6 +7,7 @@ import { AddDeathComponent } from '../../add-death/add-death/add-death.component
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, interval } from 'rxjs';
+import { DeathService} from '../../services/death-service.service';
 
 @Component({
   selector: 'app-death',
@@ -32,7 +33,7 @@ export class DeathComponent implements OnInit {
   refreshInterval: number = 50000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
 
-  constructor(private authService: AuthService) {} // Inject BirthService
+  constructor(private deathService: DeathService) {} // Inject BirthService
 
   ngOnInit(): void {
     this.loadDeaths(); // Call loadBirths method when component initializes
@@ -40,7 +41,7 @@ export class DeathComponent implements OnInit {
   }
 
   loadDeaths() {
-    this.authService.getAllDeaths().subscribe(
+    this.deathService.getAllDeaths().subscribe(
       (data: any) => {
         // Handle successful response here
         console.log(data); // Log the response data to the console
@@ -63,7 +64,7 @@ export class DeathComponent implements OnInit {
   }
 
   updateDeathRecord(updatedData: any, id: number) {
-    this.authService.updateDeath(updatedData, id).subscribe(
+    this.deathService.updateDeath(updatedData, id).subscribe(
       (response: any) => {
         console.log('Death record updated successfully:', response);
         // Optionally, perform any additional actions after successful update
@@ -78,7 +79,7 @@ export class DeathComponent implements OnInit {
   
 
   deleteDeath(id: number){
-    this.authService.deleteDeath(id).subscribe(
+    this.deathService.deleteDeath(id).subscribe(
       (data: any) => {
         // Handle successful response here
         console.log(data); // Log the response data to the console

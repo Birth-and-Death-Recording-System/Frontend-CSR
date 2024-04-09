@@ -5,7 +5,7 @@ import { catchError, tap, throwError } from 'rxjs';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
 
-  console.log('interceptor');
+
 const authService = inject(AuthService);
 
 const authReq = req.clone({

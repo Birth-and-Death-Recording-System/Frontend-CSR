@@ -7,6 +7,7 @@ import { AddBirthPageComponent } from '../../add-Birth/pages/add-birth-page/add-
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, interval } from 'rxjs';
+import { BirthServiceService } from '../../services/birth-service.service';
 
 
 @Component({
@@ -33,7 +34,7 @@ export class BirthComponent implements OnInit {
   refreshInterval: number = 50000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
 
-  constructor(private authService: AuthService) { } // Inject BirthService
+  constructor(private birthService: BirthServiceService) { } // Inject BirthService
 
   ngOnInit(): void {
     this.loadBirths(); // Call loadBirths method when component initializes
@@ -41,7 +42,7 @@ export class BirthComponent implements OnInit {
   }
 
   loadBirths() {
-    this.authService.getAllBirths().subscribe(
+    this.birthService.getAllBirths().subscribe(
       (data: any) => {
         // Handle successful response here
         console.log(data); // Log the response data to the console
@@ -65,7 +66,7 @@ export class BirthComponent implements OnInit {
   }
   
   updateBirthRecord(updatedData: any, id: number) {
-    this.authService.updateBirth(updatedData, id).subscribe(
+    this.birthService.updateBirth(updatedData, id).subscribe(
       (response: any) => {
         console.log('Birth record updated successfully:', response);
         // Optionally, perform any additional actions after successful update
@@ -80,7 +81,7 @@ export class BirthComponent implements OnInit {
   
 
   deleteBirth(id: number){
-    this.authService.deleteBirth(id).subscribe(
+    this.birthService.deleteBirth(id).subscribe(
       (data: any) => {
         // Handle successful response here
         console.log(data); // Log the response data to the console
