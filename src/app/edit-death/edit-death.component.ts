@@ -11,6 +11,7 @@ import { DeathService } from '../services/death-service.service';
 import { faRemove, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DeathComponent } from '../death/death/death.component';
 
 @Component({
   selector: 'app-edit-death',
@@ -37,7 +38,8 @@ export class EditDeathComponent implements OnInit {
     private fb: FormBuilder,
     private activate: ActivatedRoute,
     private deathService: DeathService,
-    private route: Router
+    private route: Router,
+    private death: DeathComponent
   ) {}
 
   ngOnInit(): void {
@@ -116,6 +118,7 @@ export class EditDeathComponent implements OnInit {
       .subscribe({
         next: (data: any) => {
           console.log(data);
+          this.death.loadDeaths();
           this.route.navigate(['/death']);
           alert('Death record updated successfully');
         },

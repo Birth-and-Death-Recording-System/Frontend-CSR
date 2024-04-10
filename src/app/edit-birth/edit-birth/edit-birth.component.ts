@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { Observable, catchError, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BirthService } from '../../services/birth-service.service';
+import { BirthComponent } from '../../birth/birth/birth.component';
 
 @Component({
   selector: 'app-edit-birth',
@@ -39,7 +40,8 @@ export class EditBirthComponent implements OnInit {
     private fb: FormBuilder,
     private activate: ActivatedRoute,
     private birthService: BirthService,
-    private route: Router
+    private route: Router,
+    private birth: BirthComponent
   ) {}
 
   ngOnInit(): void {
@@ -47,6 +49,8 @@ export class EditBirthComponent implements OnInit {
       this.birthid = parseInt(params.id) ?? 0;
       console.log(this.birthid);
     });
+
+  
 
     this.http
       .get('https://restcountries.com/v3.1/all')
@@ -84,6 +88,7 @@ export class EditBirthComponent implements OnInit {
     });
 
     this.getBirthData();
+             
   }
 
   getBirthData() {
@@ -126,6 +131,7 @@ export class EditBirthComponent implements OnInit {
       .updateBirthDeatils(this.birthForm.value, this.birthid)
       .subscribe({
         next: (data: any) => {
+          this.birth.loadBirths();
           console.log(data);
           this.route.navigate(['/birth']);
           alert('Birth record updated successfully');
