@@ -10,7 +10,6 @@ export class DeathService {
   constructor(private http: HttpClient,) { }
 
   submitDeathData(data: any) {
-    console.log(data);
 
     return this.http.post('http://localhost:8000/deaths/', data).pipe(
       catchError((error) => {

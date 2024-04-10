@@ -44,7 +44,6 @@ export class DeathComponent implements OnInit {
     this.deathService.getAllDeaths().subscribe(
       (data: any) => {
         // Handle successful response here
-        console.log(data); // Log the response data to the console
         this.deaths = data; // Store the birth data
         this.error = ''; // Clear any previous error message
       },

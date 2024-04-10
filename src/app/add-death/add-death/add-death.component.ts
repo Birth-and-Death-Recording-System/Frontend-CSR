@@ -64,7 +64,6 @@ export class AddDeathComponent implements OnInit{
     deathData.user = id;
     this.deathService.submitDeathData(deathData).subscribe({
       next: (response: any) => {
-        console.log(response);
       },
       error: (error: any) => {
         console.log(error);

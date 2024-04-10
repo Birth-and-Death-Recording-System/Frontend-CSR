@@ -19,6 +19,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
   profileForm!: FormGroup;
+  changePasswordForm!: FormGroup;
   profileData: any;
   profileid: number = 0;
   route: any;
@@ -40,6 +41,12 @@ export class ProfileComponent implements OnInit {
       phone_number: ['', Validators.required],
       gender: ['', Validators.required],
     }); // Initialize the profileForm with form controls and validators
+
+    this.changePasswordForm = this.formBuilder.group({
+      current_password: ['', Validators.required],
+      new_password: ['', Validators.required],
+      confirm_password: ['', Validators.required],
+    })
 
     this.getProfileData();
   }
@@ -64,7 +71,6 @@ export class ProfileComponent implements OnInit {
   getProfileData() {
     this.authService.getProfileDetail().subscribe({
       next: (data: any) => {
-        console.log(data);
 
         this.profileForm.patchValue({
           first_name: data.first_name,
@@ -84,6 +90,14 @@ export class ProfileComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         // this.route.navigate(['profile'])
+      },
+    });
+  }
+
+  changePasswordSubmit() {
+    this.authService.changePassword(this.changePasswordForm.value).subscribe({
+      next: (data: any) => {
+        console.log(data);
       },
     });
   }

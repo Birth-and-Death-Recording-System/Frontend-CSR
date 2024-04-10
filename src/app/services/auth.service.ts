@@ -40,7 +40,6 @@ export class AuthService {
 
   getToken() {
     const token = sessionStorage.getItem('token');
-    console.log(token, 'token');
     return token;
   }
 
@@ -65,6 +64,15 @@ export class AuthService {
 
   updateProfileData(data: any): Observable<any> {
     return this.http.put(`http://localhost:8000/profile/`, data).pipe(
+      catchError((error) => {
+        console.log(error);
+        return throwError(() => error); // Return the error as an Observable
+      })
+    );
+  }
+
+  changePassword(data: any){
+    return this.http.put(`http://localhost:8000/change_password/`, data).pipe(
       catchError((error) => {
         console.log(error);
         return throwError(() => error); // Return the error as an Observable

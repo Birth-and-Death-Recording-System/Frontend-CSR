@@ -14,7 +14,6 @@ export class BirthService {
     //   'Content-Type': 'application/json',
     //   'Authorization': `Token ${this.getToken()}`
     // });
-    console.log(data);
 
     return this.http.post('http://localhost:8000/births/', data).pipe(
       catchError((error) => {
