@@ -30,7 +30,7 @@
               <input type="text" formControlName="Place_of_Birth" placeholder="Place of Birth" class="input" required />
             </div>
           </div>
-  
+
           <div class="informant">
             <div>
               <label>Informant</label>
@@ -49,7 +49,7 @@
                 required />
             </div>
           </div>
-  
+
               <div class="babyInfo">
                 <div>
                   <label>Father Details</label>
@@ -107,7 +107,7 @@
                   />
                 </div>
               </div>
-  
+
           <div class="babyInfo">
             <div>
               <label>Mothers Details</label>
@@ -115,7 +115,7 @@
             <div>
               <input type="text" formControlName="Mother_First_Name" placeholder="First Name" class="input" required />
               <input type="text" formControlName="Mother_Last_Name" placeholder="Last Name" class="input" required />
-  
+
               <select formControlName="Mother_Nationality" class="input">
                 <option *ngFor="let country of countries">{{ country.name.common }}</option>
               </select>
@@ -140,4 +140,4 @@
       </div>
     </div>
   </div>
-  
+

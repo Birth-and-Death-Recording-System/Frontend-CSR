@@ -117,7 +117,7 @@ export class EditDeathComponent implements OnInit {
         next: (data: any) => {
           console.log(data);
           this.route.navigate(['/death']);
-          console.log('Death record updated successfully');
+          alert('Death record updated successfully');
         },
       });
   }

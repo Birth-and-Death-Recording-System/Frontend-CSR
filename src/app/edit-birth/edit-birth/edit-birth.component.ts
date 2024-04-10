@@ -128,7 +128,7 @@ export class EditBirthComponent implements OnInit {
         next: (data: any) => {
           console.log(data);
           this.route.navigate(['/birth']);
-          console.log('Birth record updated successfully');
+          alert('Birth record updated successfully');
         },
       });
   }
