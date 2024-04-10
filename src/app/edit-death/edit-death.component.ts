@@ -1,6 +1,11 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeathService } from '../services/death-service.service';
 import { faRemove, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -106,7 +111,9 @@ export class EditDeathComponent implements OnInit {
   }
 
   updateDeathData() {
-    this.deathService.updateDeathData(this.deathForm.value, this.deathid).subscribe({
+    this.deathService
+      .updateDeathData(this.deathForm.value, this.deathid)
+      .subscribe({
         next: (data: any) => {
           console.log(data);
           this.route.navigate(['/death']);

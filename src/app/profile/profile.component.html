@@ -1,12 +1,12 @@
 <div class="main">
   <div class="container">
     <div class="add-forms">
-      <div>
+      <form (ngSubmit)="updateProfileData()" [formGroup]="profileForm">
         <div class="profile">
           <div class="profile-lable">
             <label>Edit Profile</label>
             <p>This will be displayed on your profile</p>
-            <hr style="width: 30%; border: .2px solid #42ac70;"/>
+            <hr style="width: 30%; border: .2px solid #42ac70;" />
           </div>
           <div>
             <input type="text" formControlName="first_name" placeholder="First Name" class="input" required />
@@ -20,7 +20,6 @@
             <input type="text" formControlName="phone_number" placeholder="Phone Number" class="input" required />
           </div>
         </div>
-
         <div class="gender">
           <div>
             <label>Gender</label>
@@ -44,7 +43,7 @@
           <div class="pass-lable">
             <label>Edit password</label>
             <p>You will need these credentials when logging in</p>
-            <hr style="width: 30%; border: .2px solid #42ac70;"/>
+            <hr style="width: 30%; border: .2px solid #42ac70;" />
           </div>
           <div>
             <input type="password" formControlName="" placeholder="" class="input" required />
