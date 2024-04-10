@@ -2,7 +2,7 @@
     <div class="container">
       <div class="add-search">
         <div class="search-bar">
-          <app-search-bar />
+          <app-search-bar [SearchText]="searchTerm" (SearchTextChange)="onSearch($event)"></app-search-bar>
         </div>
         <div class="add-death">
           <a routerLink="add-death" class="primary" type="button">Add Death</a>
@@ -27,7 +27,7 @@
             <th>Edit</th>
             <th>Delete</th>
           </tr>
-          <tr class="fist" *ngFor="let death of deaths">
+          <tr class="fist" *ngFor="let death of deaths || deaths of filterData">
             <td>{{ death.surname }} {{ death.first_name }}</td>
             <td>{{ death.Gender === 'M' ? 'Male' : 'Female' }}</td>
             <td>{{ death.date }}</td>

@@ -32,10 +32,10 @@
             <th>Edit</th>
             <th>Delete</th>
           </tr>
-          <tr class="fist" *ngFor="let birth of births || filterData">
+          <tr class="fist" *ngFor="let birth of births || births of filterData ">
             <td>{{ birth.CIN }}</td>
             <td>{{ birth.First_Name }} {{ birth.Last_Name }}</td>
-            <td>{{ birth.Gender === 'M' ? 'Male' : 'Female' }}</td>
+            <td>{{ birth.gender === 'M' ? 'Male' : 'Female' }}</td>
             <td>{{ birth.date }}</td>
             <td>{{ birth.Place_of_Birth }}</td>
             <td>{{ birth.City }}</td>

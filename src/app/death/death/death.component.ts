@@ -32,12 +32,17 @@ export class DeathComponent implements OnInit {
   error: string = ''; // Property to store error messages
   refreshInterval: number = 600000; // Refresh interval in milliseconds (e.g., 60 seconds)
   private refreshSubscription: Subscription | undefined;
+  searchTerm: string = '';
+  filterData: any[] = [];
+
 
   constructor(private deathService: DeathService) {} // Inject BirthService
 
   ngOnInit(): void {
     this.loadDeaths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
+    this.onSearch(this.searchTerm);
+    console.log(this.searchTerm); // Trigger onSearch function with current value of search term
   }
 
   loadDeaths() {
@@ -59,6 +64,19 @@ export class DeathComponent implements OnInit {
   startAutoRefresh() {
     this.refreshSubscription = interval(this.refreshInterval).subscribe(() => {
       this.loadDeaths();
+    });
+  }
+
+  onSearch(searchTerm: string) {
+    this.searchTerm = searchTerm; // Update the search term
+    // this.filterData = this.births?.filter((birth: any) => {
+    //   console.log(this.filterData)
+    //   return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    // });
+    this.filterData = this.deaths?.filter((death: any) => {
+      const First_Name = death?.first_name?.toLowerCase().includes(this.searchTerm.toLowerCase());
+      const Last_Name = death?.surname?.toLowerCase().includes(this.searchTerm.toLowerCase());
+      return First_Name || Last_Name
     });
   }
   

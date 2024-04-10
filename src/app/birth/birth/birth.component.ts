@@ -43,13 +43,19 @@ export class BirthComponent implements OnInit {
   ngOnInit(): void {
     this.loadBirths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
+    this.onSearch(this.searchTerm); // Trigger onSearch function with current value of search term
   }
 
   onSearch(searchTerm: string) {
     this.searchTerm = searchTerm; // Update the search term
+    // this.filterData = this.births?.filter((birth: any) => {
+    //   console.log(this.filterData)
+    //   return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    // });
     this.filterData = this.births?.filter((birth: any) => {
-      console.log(this.filterData)
-      return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+      const First_Name = birth?.First_Name?.toLowerCase().includes(this.searchTerm.toLowerCase());
+      const Last_Name = birth?.Last_Name?.toLowerCase().includes(this.searchTerm.toLowerCase());
+      return First_Name || Last_Name
     });
   }
 
