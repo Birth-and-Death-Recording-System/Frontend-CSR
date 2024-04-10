@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container">
     <div class="add-forms">
-      <form>
+      <form (ngSubmit)="updateProfileData()" [formGroup]="profileForm">
         <div class="babyInfo">
           <div>
             <label>Edit Profile</label>
@@ -14,14 +14,12 @@
           </div>
         </div>
 
-        <div class="informant">
 
           <div>
             <input type="date" formControlName="birth_date" placeholder="Birth Date" class="input" required />
             <input type="email" formControlName="email" placeholder="Email" class="input" required />
             <input type="text" formControlName="phone_number" placeholder="Phone Number" class="input" required />
           </div>
-        </div>
 
         <div class="babyInfo">
           <div>
@@ -35,8 +33,11 @@
             </select>
           </div>
         </div>
-
-        <div class="babyInfo">
+        <!-- <div class="btn">
+          <button class="primary" type="submit">Save Password</button>
+        </div> -->
+      
+        <!-- <div class="babyInfo">
           <div>
             <label>Edit password</label>
             <p>You will need these credentials when logging in</p>
@@ -46,7 +47,7 @@
             <input type="password" formControlName="" placeholder="" class="input" required />
             <input type="password" formControlName="" placeholder="" class="input" required />
           </div>
-        </div>
+        </div> -->
         <div class="btn">
           <button class="primary" type="submit">Save Password</button>
         </div>
