@@ -1,7 +1,7 @@
 .main-display {
-  position: absolute;
-  bottom: 54%;
-  left: 50%;
+  position: fixed;
+  bottom: 73%;
+  left: 68.5%;
   transform: translate(-48%, 100%);
   object-fit: contain;
   width: 80%;
