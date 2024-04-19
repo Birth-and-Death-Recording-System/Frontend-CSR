@@ -175,3 +175,33 @@
   background-color: #49a16f;
   transition: .5 ease-in-out;
 }
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    margin-top: -50px;
+    margin-left: -15px;
+  width: 60vw;
+  height: 70vh;
+  }
+  
+  .deadInfo input,
+  .input,
+  .choice,
+  .informant input {
+  width: 25%;
+  height: 25px;
+  }
+
+  .deadInfo input{
+    margin-right: 10px;
+  }
+
+  .deadinfo input{
+    margin-bottom: 10px;
+  }
+
+
+  .container::before {
+    height: 100vh;
+  }
+  }
