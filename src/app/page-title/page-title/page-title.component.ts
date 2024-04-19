@@ -19,5 +19,4 @@ export class PageTitleComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
-   
 }
