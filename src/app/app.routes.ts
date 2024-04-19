@@ -24,11 +24,13 @@ export const routes: Routes = [
       {
         path: 'home',
         component: DashboardComponent,
+        data: { title: 'Dashboard' },
         title: 'Home'
       },
       {
         path: 'dashboard',
         component: DashboardComponent,
+        data: { title: 'Dashboard' },
         title: 'Home'
       },
       {
@@ -39,6 +41,7 @@ export const routes: Routes = [
       {
         path: 'birth',
         component: BirthComponent,
+        data: { title: 'Birth' },
         children: [
           {
             path: 'add-birth',
@@ -49,14 +52,14 @@ export const routes: Routes = [
             path: 'edit-birth/:id',
             component: EditBirthComponent,
             title: 'Edit Birth',
-          },
-          
+          }
         ],
         title: 'Birth',
       },
       {
         path: 'death',
         component: DeathComponent,
+        data: { title: 'Death' },
         children: [
           {
             path: 'add-death',
