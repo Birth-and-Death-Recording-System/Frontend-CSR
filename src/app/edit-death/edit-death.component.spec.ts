@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditDeathComponent } from './edit-death.component';
+import { EditDeathComponent } from './EditDeathComponent';
 
 describe('EditDeathComponent', () => {
   let component: EditDeathComponent;
@@ -11,7 +11,7 @@ describe('EditDeathComponent', () => {
       imports: [EditDeathComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(EditDeathComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

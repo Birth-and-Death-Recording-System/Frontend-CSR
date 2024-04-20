@@ -9,7 +9,7 @@ import { DeathComponent } from './death/death/death.component';
 import { AddDeathComponent } from './add-death/add-death/add-death.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditBirthComponent } from './edit-birth/edit-birth/edit-birth.component';
-import { EditDeathComponent } from './edit-death/edit-death.component';
+import { EditDeathComponent } from './edit-death/EditDeathComponent';
 
 export const routes: Routes = [
   {

@@ -9,7 +9,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
-import { Observable, catchError, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BirthService } from '../../services/birth-service.service';
 import { BirthComponent } from '../../birth/birth/birth.component';
@@ -37,19 +36,22 @@ export class EditBirthComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
+    private router: Router,
     private activate: ActivatedRoute,
     private birthService: BirthService,
-    private route: Router,
     private birth: BirthComponent
-  ) {}
+  ) { }
+
+  onCloseButtonClick(): void {
+    // Navigate to another route
+    this.router.navigate(['/birth']); // Navigate to the root route
+  }
 
   ngOnInit(): void {
     this.activate.params.subscribe((params: any) => {
       this.birthid = parseInt(params.id) ?? 0;
       console.log(this.birthid);
     });
-
-
 
     this.http
       .get('https://restcountries.com/v3.1/all')
@@ -87,7 +89,6 @@ export class EditBirthComponent implements OnInit {
     });
 
     this.getBirthData();
-
   }
 
   getBirthData() {
@@ -132,7 +133,6 @@ export class EditBirthComponent implements OnInit {
         next: (data: any) => {
           console.log(data);
           this.birth.loadBirths();
-          this.route.navigate(['/birth']);
           alert('Birth record updated successfully');
         },
       });

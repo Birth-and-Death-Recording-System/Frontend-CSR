@@ -10,8 +10,13 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent {
+  activeItem: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  setActiveItem(item: string): void {
+    this.activeItem = item;
+  }
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   /// Method to trigger logout
   onLogout(): void {

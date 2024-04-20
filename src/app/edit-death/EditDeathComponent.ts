@@ -4,7 +4,7 @@ import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
-  Validators,
+  Validators
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DeathService } from '../services/death-service.service';
@@ -12,6 +12,7 @@ import { faRemove, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DeathComponent } from '../death/death/death.component';
+
 
 @Component({
   selector: 'app-edit-death',
@@ -26,6 +27,10 @@ import { DeathComponent } from '../death/death/death.component';
   styleUrl: './edit-death.component.css',
 })
 export class EditDeathComponent implements OnInit {
+onCloseButtonClick() {
+throw new Error('Method not implemented.');
+}
+
   deathid: number = 0;
   deathForm!: FormGroup;
   faTimes = faTimes;
@@ -38,14 +43,9 @@ export class EditDeathComponent implements OnInit {
     private fb: FormBuilder,
     private activate: ActivatedRoute,
     private deathService: DeathService,
-    private router: Router,
+    private route: Router,
     private death: DeathComponent
   ) { }
-
-  onCloseButtonClick(): void {
-    // Navigate to another route
-    this.router.navigate(['/death']); // Navigate to the root route
-  }
 
   ngOnInit(): void {
     this.activate.params.subscribe((params: any) => {
@@ -55,8 +55,7 @@ export class EditDeathComponent implements OnInit {
     this.http
       .get('https://restcountries.com/v3.1/all')
       .subscribe((data: any) => {
-        this.countries = data.sort((a: any, b: any) =>
-          a.name.common.localeCompare(b.name.common)
+        this.countries = data.sort((a: any, b: any) => a.name.common.localeCompare(b.name.common)
         );
       });
 
@@ -120,14 +119,13 @@ export class EditDeathComponent implements OnInit {
   updateDeathData() {
     this.deathService
       .updateDeathData(this.deathForm.value, this.deathid)
-      .subscribe(
-        {
-          next: (data: any) => {
-            console.log(data);
-            this.death.loadDeaths();
-            alert('Death record updated successfully');
-          },
-        }
-      );
+      .subscribe({
+        next: (data: any) => {
+          console.log(data);
+          this.death.loadDeaths();
+          this.route.navigate(['/death']);
+          alert('Death record updated successfully');
+        },
+      });
   }
 }
