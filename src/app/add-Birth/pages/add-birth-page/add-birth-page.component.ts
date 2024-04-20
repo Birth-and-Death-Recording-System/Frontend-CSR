@@ -1,12 +1,13 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { BirthService } from '../../../services/birth-service.service';
 import { BirthComponent } from '../../../birth/birth/birth.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-birth',
@@ -35,8 +36,14 @@ export class AddBirthPageComponent implements OnInit {
     private authService: AuthService,
     private fb: FormBuilder,
     private birthService: BirthService,
-    private birth: BirthComponent
+    private birth: BirthComponent,
+    private router: Router
   ) {}
+
+  onCloseButtonClick(): void {
+    // Navigate to another route
+    this.router.navigate(['/birth']); // Navigate to the root route
+  }
 
   token = this.authService.getToken();
   // token = localStorage.getItem('authToken');
@@ -91,6 +98,7 @@ export class AddBirthPageComponent implements OnInit {
         console.log(response);
         this.birth.loadBirths()
         alert("Successfully submitted!");
+        this.router.navigate(['/birth']);
       },
       error: (error: any) => {
         console.log(error);
