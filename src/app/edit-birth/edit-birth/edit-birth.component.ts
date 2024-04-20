@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
 import {
   FormBuilder,
   FormGroup,
@@ -50,7 +49,7 @@ export class EditBirthComponent implements OnInit {
       console.log(this.birthid);
     });
 
-  
+
 
     this.http
       .get('https://restcountries.com/v3.1/all')
@@ -88,7 +87,7 @@ export class EditBirthComponent implements OnInit {
     });
 
     this.getBirthData();
-             
+
   }
 
   getBirthData() {
@@ -131,8 +130,8 @@ export class EditBirthComponent implements OnInit {
       .updateBirthDeatils(this.birthForm.value, this.birthid)
       .subscribe({
         next: (data: any) => {
-          this.birth.loadBirths();
           console.log(data);
+          this.birth.loadBirths();
           this.route.navigate(['/birth']);
           alert('Birth record updated successfully');
         },

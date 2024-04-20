@@ -32,7 +32,7 @@ export class AddDeathComponent implements OnInit{
     this.http.get('https://restcountries.com/v3.1/all').subscribe((data: any) => {
       this.countries = data.sort((a:any,b:any)=> a.name.common.localeCompare(b.name.common))
     });
-    
+
       this.DeathForm = this.fb.group({
         surname: ['', Validators.required],
         first_name: ['', Validators.required],
@@ -60,15 +60,16 @@ export class AddDeathComponent implements OnInit{
   onSubmit(): void {
     const deathData = this.DeathForm.value;
     const userId = this.authService.getUserId();
-    const id = parseInt(userId!, 10) 
+    const id = parseInt(userId!, 10)
     deathData.user = id;
     this.deathService.submitDeathData(deathData).subscribe({
       next: (response: any) => {
+        alert("Successfully submitted!");
       },
       error: (error: any) => {
+        alert("Do not leave any field empty")
         console.log(error);
       }
     });
-   
   }
 }

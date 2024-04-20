@@ -1,157 +1,156 @@
 .main-display {
-    position: absolute;
-    bottom: 54%;
-    left: 50%;
-    transform: translate(-48%, 100%);
-    object-fit: contain;
-    width: 80%;
-  }
-  
-  .container {
-    width: 60vw;
-    height: 60vh;
-    padding: 8px;
-    color: #338255;
-    border-radius: 5px;
-    background-color: #fefefe;
-    border: .5px solid #338255;
-    overflow: hidden;
-    z-index: 0;
-  }
-  
-  .container::before {
-    content: '';
-    top: -31%;
-    left: -17.8%;
-    z-index: -1;
-    width: 84vw;
-    height: 92.6vh;
-    position: absolute;
-    backdrop-filter: blur(5px);
-    transition: .5s ease-in-out;
-    background-color: #4683601f;
-  }
-  
-  .head {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    padding: 10px 10px 0 10px;
-    justify-content: space-between;
-  }
-  
-  .title h2 {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .head .close button {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    border: none;
-    color: #338255;
-    background-color: transparent;
-  }
-  
-  .head button:hover {
-    cursor: pointer;
-  }
-  
-  .add-forms {
-    margin: 15px 0 0 5px;
-    padding: 0 14px;
-    height: 100%;
-  }
-  
-  .babyInfo {
-    margin: 8px 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 58vw;
-  }
-  
-  .babyInfo input,
-  .input {
-    height: 29px;
-    width: 18%;
-    color: rgb(114, 114, 114);
-    padding: 0 0 0 5px;
-    border: .5px #338255 solid;
-    border-radius: 3px;
-    margin: 10px 10px 0 0;
-  }
-  
-  .babyInfo input:focus {
-    outline: .5px #338255 solid;
-  }
-  
-  .choice {
-    color: rgb(114, 114, 114);
-    height: 31px;
-    width: 16%;
-    padding: 0 0 0 5px;
-    border: .5px #338255 solid;
-    border-radius: 3px;
-    margin: 0 10px 0 0;
-  }
-  
-  .choice:focus {
-    outline: .5px #338255 solid;
-  }
-  
-  .informant {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 40vw;
-    margin: 10px 0 20px 0;
-  }
-  
-  .informant input {
-    color: rgb(114, 114, 114);
-    height: 29px;
-    width: 20%;
-    margin: 0 20px 0 0;
-    padding: 0 0 0 5px;
-    border: .5px #338255 solid;
-    border-radius: 3px;
-  }
-  
-  .informant input:focus {
-    outline: .5px #338255 solid;
-  }
-  
-  .input {
-    margin: 0 20px 0 0;
-    color: rgb(114, 114, 114);
-    height: 31px;
-    width: 20%;
-    padding: 0 0 0 5px;
-    border: .5px #338255 solid;
-    border-radius: 3px;
-  }
-  
-  .primary {
-    padding: 8px 30px;
-    color: #338255;
-    font-weight: 300;
-    background: #fefefe;
-    border-radius: 5px;
-    border: solid .3px #338255;
-    margin: 10px 0 0 0px;
-  }
-  
-  .primary:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color: #49a16f;
-    transition: .5 ease-in-out;
-  }
-  
-  button {
-    min-width: 5rem;
-    background-color: green;
-  }
-  
+  position: fixed;
+  bottom: 45%;
+  left: 50%;
+  transform: translate(-30%, 50%);
+  object-fit: contain;
+  width: 80%;
+}
+
+.container {
+  width: 60vw;
+  height: 65vh;
+  padding: 8px;
+  color: #338255;
+  border-radius: 5px;
+  background-color: #fefefe;
+  border: .5px solid #338255;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.container::before {
+  content: '';
+  top: -20%;
+  left: -17.8%;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  transition: .5s ease-in-out;
+  background-color: #4683601f;
+}
+
+.head {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 0 10px;
+  justify-content: space-between;
+}
+
+.title h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.head .close button {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  border: none;
+  color: #338255;
+  background-color: transparent;
+}
+
+.head button:hover {
+  cursor: pointer;
+}
+
+.add-forms {
+  margin: 15px 0 0 5px;
+  padding: 0 14px;
+  height: 100%;
+}
+
+.babyInfo {
+  margin: 8px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 58vw;
+}
+
+.babyInfo input,
+.input {
+  height: 29px;
+  width: 18%;
+  color: rgb(114, 114, 114);
+  padding: 0 0 0 5px;
+  border: .5px #338255 solid;
+  border-radius: 3px;
+  margin: 10px 10px 0 0;
+}
+
+.babyInfo input:focus {
+  outline: .5px #338255 solid;
+}
+
+.choice {
+  color: rgb(114, 114, 114);
+  height: 31px;
+  width: 16%;
+  padding: 0 0 0 5px;
+  border: .5px #338255 solid;
+  border-radius: 3px;
+  margin: 0 10px 0 0;
+}
+
+.choice:focus {
+  outline: .5px #338255 solid;
+}
+
+.informant {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40vw;
+  margin: 10px 0 20px 0;
+}
+
+.informant input {
+  color: rgb(114, 114, 114);
+  height: 29px;
+  width: 20%;
+  margin: 0 20px 0 0;
+  padding: 0 0 0 5px;
+  border: .5px #338255 solid;
+  border-radius: 3px;
+}
+
+.informant input:focus {
+  outline: .5px #338255 solid;
+}
+
+.input {
+  margin: 0 20px 0 0;
+  color: rgb(114, 114, 114);
+  height: 31px;
+  width: 20%;
+  padding: 0 0 0 5px;
+  border: .5px #338255 solid;
+  border-radius: 3px;
+}
+
+.primary {
+  padding: 8px 30px;
+  color: #338255;
+  font-weight: 300;
+  background: #fefefe;
+  border-radius: 5px;
+  border: solid .3px #338255;
+  margin: 10px 0 0 0px;
+}
+
+.primary:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #49a16f;
+  transition: .5 ease-in-out;
+}
+
+button {
+  min-width: 5rem;
+  background-color: green;
+}

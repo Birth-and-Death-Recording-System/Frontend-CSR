@@ -38,14 +38,15 @@ export class LoginComponent {
       };
       this.authService.signIn(signInData).subscribe({
         next: (response: any) => {
+          alert("Login Successful")
           console.log(response);
           this.isLoading = false;
           sessionStorage.setItem('token', response.token);
-         
           this.router.navigate(['home']);
           // this.authService.token = response.token;
         },
         error: (error: any) => {
+          alert("Enter valid  credentials")
           console.log(error);
           this.isLoading = false;
         },
