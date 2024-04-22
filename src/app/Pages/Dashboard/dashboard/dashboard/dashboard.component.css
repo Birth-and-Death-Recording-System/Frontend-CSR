@@ -13,6 +13,19 @@
   width: 80%;
 }
 
+.page {
+  position: fixed;
+  top: 9%;
+  left: 18%;
+}
+
+.page-title h2 {
+  padding: 0;
+  margin: 0;
+  color: #338255;
+  font-size: 24px;
+}
+
 .birth-death {
   display: flex;
   flex-direction: column;
