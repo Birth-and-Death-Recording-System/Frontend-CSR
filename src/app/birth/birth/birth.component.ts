@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from '../../search-bar/search-bar/search-bar.component';
@@ -24,6 +24,8 @@ import { BirthService } from '../../services/birth-service.service';
   styleUrl: './birth.component.css'
 })
 export class BirthComponent implements OnInit {
+  title: string =  'Dashboard';
+
   faEdit = faEdit;
   faTrash = faTrash;
 
@@ -36,11 +38,13 @@ export class BirthComponent implements OnInit {
   private refreshSubscription: Subscription | undefined;
   filterData: any[] = [];
 
-  constructor(private birthService: BirthService, ) {
+  constructor(private birthService: BirthService, private route: ActivatedRoute) {
     console.log(this.searchTerm); // Log the search term to the console
    } // Inject BirthService
 
   ngOnInit(): void {
+    this.title = this.route.snapshot.data['title'];
+
     this.loadBirths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
     this.onSearch(this.searchTerm); // Trigger onSearch function with current value of search term
@@ -48,10 +52,6 @@ export class BirthComponent implements OnInit {
 
   onSearch(searchTerm: string) {
     this.searchTerm = searchTerm; // Update the search term
-    // this.filterData = this.births?.filter((birth: any) => {
-    //   console.log(this.filterData)
-    //   return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
-    // });
     this.filterData = this.births?.filter((birth: any) => {
       const First_Name = birth?.First_Name?.toLowerCase().includes(this.searchTerm.toLowerCase());
       const Last_Name = birth?.Last_Name?.toLowerCase().includes(this.searchTerm.toLowerCase());
@@ -81,7 +81,7 @@ export class BirthComponent implements OnInit {
       this.loadBirths();
     });
   }
-  
+
 
   deleteBirth(id: number){
     this.birthService.deleteBirth(id).subscribe(

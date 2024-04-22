@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRemove, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from '../../search-bar/search-bar/search-bar.component';
 import { AddDeathComponent } from '../../add-death/add-death/add-death.component';
-import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Subscription, interval } from 'rxjs';
 import { DeathService} from '../../services/death-service.service';
@@ -24,6 +23,8 @@ import { DeathService} from '../../services/death-service.service';
   styleUrl: './death.component.css',
 })
 export class DeathComponent implements OnInit {
+  title: string =  'Dashboard';
+
   faRemove = faRemove;
   faEdit = faEdit;
   faTrash = faTrash;
@@ -36,9 +37,11 @@ export class DeathComponent implements OnInit {
   filterData: any[] = [];
 
 
-  constructor(private deathService: DeathService) {} // Inject BirthService
+  constructor(private deathService: DeathService, private route: ActivatedRoute) {} // Inject DeathService
 
   ngOnInit(): void {
+    this.title = this.route.snapshot.data['title'];
+
     this.loadDeaths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
     this.onSearch(this.searchTerm);
@@ -69,17 +72,13 @@ export class DeathComponent implements OnInit {
 
   onSearch(searchTerm: string) {
     this.searchTerm = searchTerm; // Update the search term
-    // this.filterData = this.births?.filter((birth: any) => {
-    //   console.log(this.filterData)
-    //   return birth?.name && birth?.name.toLowerCase().includes(this.searchTerm.toLowerCase());
-    // });
     this.filterData = this.deaths?.filter((death: any) => {
       const First_Name = death?.first_name?.toLowerCase().includes(this.searchTerm.toLowerCase());
       const Last_Name = death?.surname?.toLowerCase().includes(this.searchTerm.toLowerCase());
       return First_Name || Last_Name
     });
   }
-  
+
 
   deleteDeath(id: number){
     this.deathService.deleteDeath(id).subscribe(

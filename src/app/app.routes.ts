@@ -24,19 +24,17 @@ export const routes: Routes = [
       {
         path: 'home',
         component: DashboardComponent,
-        data: { title: 'Dashboard' },
-        title: 'Home'
+        data: { title: 'Home' }
       },
       {
         path: 'dashboard',
         component: DashboardComponent,
-        data: { title: 'Dashboard' },
-        title: 'Home'
+        data: { title: 'Home' }
       },
       {
         path: 'profile',
         component: ProfileComponent,
-        title: 'Profile'
+        data: { title: 'Profile' }
       },
       {
         path: 'birth',
@@ -46,15 +44,14 @@ export const routes: Routes = [
           {
             path: 'add-birth',
             component: AddBirthPageComponent,
-            title: 'Add Birth',
+            data: { title: 'Add Birth' }
           },
           {
             path: 'edit-birth/:id',
             component: EditBirthComponent,
-            title: 'Edit Birth',
+            data: { title: 'Edit Birth' }
           }
         ],
-        title: 'Birth',
       },
       {
         path: 'death',
@@ -64,16 +61,30 @@ export const routes: Routes = [
           {
             path: 'add-death',
             component: AddDeathComponent,
-            title: 'Add Death',
+            data: { title: 'Add Death' }
           },
           {
             path: 'edit-death/:id',
             component: EditDeathComponent,
-            title: 'Edit Death',
+            data: { title: 'Edit Death' }
           },
         ],
-        title: 'Death',
       },
     ],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: { title: 'Dashboard' }
+  },
+  {
+    path: 'birth',
+    component: BirthComponent,
+    data: { title: 'Birth' }
+  },
+  {
+    path: 'death',
+    component: DeathComponent,
+    data: { title: 'Death' }
   },
 ];

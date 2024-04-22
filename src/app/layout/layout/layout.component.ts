@@ -17,12 +17,10 @@ import { PageTitleComponent } from '../../page-title/page-title/page-title.compo
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })
-export class LayoutComponent implements OnInit{
+export class LayoutComponent implements OnInit {
   userData?: User;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    
-}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {

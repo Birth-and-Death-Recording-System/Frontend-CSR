@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SignInData, userResponse } from '../interface/authInterface';
 import { Observable, catchError, tap, throwError } from 'rxjs';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -38,6 +38,10 @@ export class AuthService {
     sessionStorage.setItem('id', id);
   }
 
+  // private setTitle(title: string) {
+  //   sessionStorage.getItem('title');
+  // }
+
   getToken() {
     const token = sessionStorage.getItem('token');
     return token;
@@ -52,6 +56,11 @@ export class AuthService {
     const userId = sessionStorage.getItem('id');
     return userId;
   }
+
+  // getTitle(){
+  //   const title = sessionStorage.getItem('title');
+  //   return title;
+  // }
 
   getProfileDetail() {
     return this.http.get(`http://localhost:8000/profile/`).pipe(
