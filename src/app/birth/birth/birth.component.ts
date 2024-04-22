@@ -24,8 +24,6 @@ import { BirthService } from '../../services/birth-service.service';
   styleUrl: './birth.component.css'
 })
 export class BirthComponent implements OnInit {
-  title: string =  'Dashboard';
-
   faEdit = faEdit;
   faTrash = faTrash;
 
@@ -43,8 +41,6 @@ export class BirthComponent implements OnInit {
    } // Inject BirthService
 
   ngOnInit(): void {
-    this.title = this.route.snapshot.data['title'];
-
     this.loadBirths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
     this.onSearch(this.searchTerm); // Trigger onSearch function with current value of search term

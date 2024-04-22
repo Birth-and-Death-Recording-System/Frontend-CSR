@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faRemove, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { SearchBarComponent } from '../../search-bar/search-bar/search-bar.component';
@@ -23,8 +23,6 @@ import { DeathService} from '../../services/death-service.service';
   styleUrl: './death.component.css',
 })
 export class DeathComponent implements OnInit {
-  title: string =  'Dashboard';
-
   faRemove = faRemove;
   faEdit = faEdit;
   faTrash = faTrash;
@@ -37,11 +35,9 @@ export class DeathComponent implements OnInit {
   filterData: any[] = [];
 
 
-  constructor(private deathService: DeathService, private route: ActivatedRoute) {} // Inject DeathService
+  constructor(private deathService: DeathService) {} // Inject DeathService
 
   ngOnInit(): void {
-    this.title = this.route.snapshot.data['title'];
-
     this.loadDeaths(); // Call loadBirths method when component initializes
     this.startAutoRefresh();
     this.onSearch(this.searchTerm);

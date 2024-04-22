@@ -14,7 +14,7 @@ import { PageTitleService } from '../../services/page-title-service.service';
   styleUrl: './page-title.component.css'
 })
 export class PageTitleComponent implements OnInit {
-  title: string =  'Dashboard'; // Default title
+  title: string = ''; // Default title
   // title = this.authService.getTitle();
 
   user = this.authService.getUsername();

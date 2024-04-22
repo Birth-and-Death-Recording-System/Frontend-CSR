@@ -10,8 +10,6 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent {
-  title: string = 'Dashboard';
-
   activeItem: string | null = null;
 
   setActiveItem(item: string): void {
@@ -19,10 +17,6 @@ export class SidenavComponent {
   }
 
   constructor(private authService: AuthService, private router: Router) { }
-
-  setTitle(newTitle: string) {
-    this.title = newTitle;
-  }
 
   /// Method to trigger logout
   onLogout(): void {
