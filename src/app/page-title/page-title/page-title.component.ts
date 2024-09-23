@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { filter, map } from 'rxjs/operators';
-import { Title } from '@angular/platform-browser';
 import { PageTitleService } from '../../services/page-title-service.service';
 
 @Component({
