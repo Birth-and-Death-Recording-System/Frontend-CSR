@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../../../Services/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SignInData } from '../../../interface/authInterface';
 import { HttpClientModule } from '@angular/common/http';
