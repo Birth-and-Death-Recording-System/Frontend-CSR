@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { faChartSimple } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
-import { HomeComponent } from '../../../../home/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LineChartComponent } from '../../../../line-chart/line-chart/line-chart.component';
+import { LineChartComponent } from '../../../../Components/line-chart/line-chart/line-chart.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [HomeComponent, FontAwesomeModule, LineChartComponent],
+  imports: [ FontAwesomeModule, LineChartComponent ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

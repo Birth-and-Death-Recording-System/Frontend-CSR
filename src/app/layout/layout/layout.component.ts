@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../header/header/header.component';
-import { SidenavComponent } from '../../sidenav/sidenav/sidenav.component';
+import { HeaderComponent } from '../../Components/header/header/header.component';
+import { SidenavComponent } from '../../Components/sidenav/sidenav/sidenav.component';
 import { User } from '../../interface/authInterface';
-import { PageTitleComponent } from '../../page-title/page-title/page-title.component';
+import { PageTitleComponent } from '../../Components/page-title/page-title/page-title.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    SidenavComponent,
-    RouterOutlet,
-    PageTitleComponent,
-  ],
+  imports: [ HeaderComponent, SidenavComponent, RouterOutlet, PageTitleComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

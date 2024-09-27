@@ -1,5 +1,5 @@
 import { HttpEventType, HttpInterceptorFn } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './Services/auth.service';
 import { inject } from '@angular/core';
 import { catchError, tap, throwError } from 'rxjs';
 
