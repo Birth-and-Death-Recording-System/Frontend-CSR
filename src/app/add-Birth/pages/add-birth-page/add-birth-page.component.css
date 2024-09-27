@@ -160,11 +160,11 @@ button {
 /* For devices with a maximum width of 768px (e.g., tablets) */
 @media only screen and (min-width: 1024px) {
   .container {
-    margin-top: -70px;
-    margin-left: -15px;
+  margin-top: -70px;
+  margin-left: -15px;
   width: 60vw;
   height: 75vh;
-  /* border: 2px solid yellow; */
+  overflow: auto;
   }
   
   .babyInfo input,
@@ -173,7 +173,6 @@ button {
   .informant input {
   width: 20%;
   height: 25px;
-  /* border: 2px solid red; */
   }
   .container::before {
     height: 100vh;

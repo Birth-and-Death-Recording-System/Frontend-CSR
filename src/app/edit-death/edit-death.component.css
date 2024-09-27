@@ -177,3 +177,24 @@
   background-color: #49a16f;
   transition: .5 ease-in-out;
 }
+
+@media only screen and (min-width: 1024px) {
+  .container {
+  margin-top: -70px;
+  margin-left: -15px;
+  width: 60vw;
+  height: 75vh;
+  overflow: auto;
+  }
+  
+  .babyInfo input,
+  .input,
+  .choice,
+  .informant input {
+  width: 20%;
+  height: 25px;
+  }
+  .container::before {
+    height: 100vh;
+  }
+  }
